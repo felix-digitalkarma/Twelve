@@ -29,6 +29,14 @@ Provides distribution through shipping
 
 Recordings of Meetings for sale - speakers per month
 
+Technology considerations
+Zoom API
+JWT Authentication
+Stripe API
+Google/Outlook Calendar
+Mandrill / Mailchimp Integration
+Amazon AWS Support - Possible AI/Machine Learning
+Donation Gateway / Distribution to recognized charity foundations
 
 Output of sales could go to group-defined charities or community support providing economic relief. Speakers would be able to define charity. This would incentivise speaker involvement, ie. sharing stories. This would also require possible permission from defined charities in the system. Anonymity is paramount.
 
