@@ -35,8 +35,11 @@ JWT Authentication
 Stripe API
 Google/Outlook Calendar
 Mandrill / Mailchimp Integration
-Amazon AWS Support - Possible AI/Machine Learning
+Video Transcoding to text for analysis - Kubernetes, Real Time Audio to Text transcoding research.
+Amazon AWS Support - AI/Machine Learning from text analysis
+Media Upload Support - AWS S3 Buckets
 Donation Gateway / Distribution to recognized charity foundations
+
 
 Output of sales could go to group-defined charities or community support providing economic relief. Speakers would be able to define charity. This would incentivise speaker involvement, ie. sharing stories. This would also require possible permission from defined charities in the system. Anonymity is paramount.
 
