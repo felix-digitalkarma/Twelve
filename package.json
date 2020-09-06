@@ -1,0 +1,23 @@
+{
+  "name": "twelve",
+  "version": "1.0.0",
+  "description": "community platform",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felix-digitalkarma/Twelve.git"
+  },
+  "keywords": [
+    "community",
+    "twelve"
+  ],
+  "author": "Felix Montanez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felix-digitalkarma/Twelve/issues"
+  },
+  "homepage": "https://github.com/felix-digitalkarma/Twelve#readme"
+}
