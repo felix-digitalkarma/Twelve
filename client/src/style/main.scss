@@ -1,0 +1,13 @@
+:root {
+  --primary-color: #f7be1b;
+  --alternate-color: #f1f3f9;
+  --dark-color: #1f1f1f;
+  --black-color: #000000;
+  --white-color: #FFFFFF;
+
+}
+
+body {
+  background: var(--dark-color) !important;
+  color: var(--alternate-color) !important;
+}
