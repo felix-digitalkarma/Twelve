@@ -4,7 +4,7 @@ dotenv.config();
 const express = require('express'),
   path = require('path'),
   bodyParser = require('body-parser'),
-  connectDB = require('./config/db');
+  connectDB = require('../config/db');
 
 const app = express();
 connectDB();

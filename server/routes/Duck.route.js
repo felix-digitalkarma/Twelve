@@ -1,7 +1,7 @@
 const express = require('express');
 const duckRoute = express.Router();
-const auth = require('../../middleware/auth');
-let duckModel = require('../../models/Duck');
+const auth = require('../middleware/auth');
+let duckModel = require('../models/Duck');
 
 // Get a list of ducks
 duckRoute.get('/', auth, async (req, res) => {
