@@ -4,19 +4,19 @@ import TabbedPanel from './TabbedPanel';
 const HomeComponent = () => {
   return (
     <Fragment>
-      <Container fluid>
+      <Container fluid >
         <Row className="minh-300">
-          <Col className="p-3">
+          <Col className="p-3" md={6}>
             <h1>Find Your Recovery</h1>
             <h5>Anonymity as a designing principle,</h5>
             <h5>Recovery as a designing purpose,</h5>
             <h5>Connection through technology.</h5>
-            <button>Take Survey</button>
-            <button>Donate</button>
+            <button className="btn btn-primary mr-10">Take Survey</button>
+            <button className="btn btn-success">Donate</button>
           </Col>
-          <Col className="p-3">
+          <Col md={6}>
             <h1>Graphic</h1>
-            <p>Vector Graphic, Imagery or Slideshow that depicts the overall goal of the project in what it does.</p>
+            <p>Vector Graphic, Imagery or Slideshow that depicts the overall goal of the project in what it does. Keywords: digital, faith, spirituality, machine learning, artificial intelligence, recovery, community, recommendations, algorithms</p>
           </Col>
         </Row>
 

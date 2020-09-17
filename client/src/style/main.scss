@@ -4,16 +4,36 @@
   --dark-color: #1f1f1f;
   --black-color: #000000;
   --white-color: #FFFFFF;
+  --blue-color: blue;
 
 }
 
 body {
-  background: var(--dark-color) !important;
-  color: var(--alternate-color) !important;
+  min-height: 100% !important;
 }
 
 
+
+.blue-gradient {
+  background: rgb(2,0,36);
+background: -moz-linear-gradient(243deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
+background: -webkit-linear-gradient(243deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
+background: linear-gradient(243deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#00d4ff",GradientType=1);
+}
+
 .minh-300 {
-  background: blue;
+
   min-height: 300px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.bg-blue {
+  background: blue !important;
+}
+.bg-none {
+  background: none !important;
 }
