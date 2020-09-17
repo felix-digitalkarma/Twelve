@@ -2,7 +2,7 @@ import React from 'react'
 
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-none">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-none">
       <a className="navbar-brand" href="#">
         <i class="fas fa-fire mr-10"></i>Twelve.Community</a>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

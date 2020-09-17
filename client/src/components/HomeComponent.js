@@ -11,8 +11,10 @@ const HomeComponent = () => {
             <h5>Anonymity as a designing principle,</h5>
             <h5>Recovery as a designing purpose,</h5>
             <h5>Connection through technology.</h5>
-            <button className="btn btn-primary mr-10">Take Survey</button>
-            <button className="btn btn-success">Donate</button>
+            <div className="p-3">
+              <button className="btn btn-primary mr-10">Take Survey</button>
+              <button className="btn btn-success">Donate</button>
+            </div>
           </Col>
           <Col md={6}>
             <h1>Graphic</h1>
