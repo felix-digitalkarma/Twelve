@@ -1,10 +1,12 @@
 :root {
-  --primary-color: #f7be1b;
+  --primary-color: #00d4ff;
   --alternate-color: #f1f3f9;
+  --success-color: #00ffab;
   --dark-color: #1f1f1f;
   --black-color: #000000;
   --white-color: #FFFFFF;
   --blue-color: blue;
+  --light-grey: #cdcdcd;
 
 }
 
@@ -26,29 +28,20 @@ h5 {
   line-height: .8em;
 }
 
+li.active {
+  font-weight: bolder;
+  color: var(--success-color);
+}
+
+li.completed {
+  font-style: italic;
+  color: var(--light-grey);
+}
 .navbar-inner {
   background: transparent;
-}
-.blue-gradient {
-  background: rgb(2,0,36);
-background: -moz-linear-gradient(243deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
-background: -webkit-linear-gradient(243deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
-background: linear-gradient(243deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#00d4ff",GradientType=1);
-}
-
-.minh-300 {
-
-  min-height: 300px;
 }
 
 .mr-10 {
   margin-right: 10px;
 }
 
-.bg-blue {
-  background: blue !important;
-}
-.bg-none {
-  background: none !important;
-}

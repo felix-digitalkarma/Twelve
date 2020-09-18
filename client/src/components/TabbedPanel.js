@@ -1,14 +1,14 @@
 import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 const TabbedPanel = () => (
+
   <Tabs>
     <TabList>
       <Tab>Mission</Tab>
       <Tab>My Story</Tab>
       <Tab>UX Process</Tab>
-      <Tab>Surveys</Tab>
-      <Tab>Development Process</Tab>
     </TabList>
     <TabPanel>
       <h2>Community Mission</h2>
@@ -42,36 +42,47 @@ const TabbedPanel = () => (
       </p>
     </TabPanel>
     <TabPanel>
-      <h3>Discovery &amp; Research</h3>
-      <ul>
-        <li>Stakeholder interviewing </li>
-        <li>Project Planning </li>
-        <li>User Research</li>
-        <li>Competitive/ Comparative Analysis</li>
-        <li>Persona Creation</li>
-        <li>Best Practices Research</li>
-      </ul>
-      <h3>Sketching &amp; Ideation</h3>
-      <ul>
-        <li>User Stories</li>
-        <li>Rough Sketches</li>
-      </ul>
-      <h3>Narrowing Scope &amp; Structure </h3>
-      <ul>
-        <li>User Flows</li>
-        <li>Scenarios</li>
-        <li>Sitemap</li>
-        <li>Wireframes </li>
-      </ul>
-      <h3>Prototyping &amp; Testing</h3>
-      <ul>
-        <li>Prototype</li>
-        <li>Usability testing</li>
-        <li>Multiple prototype iterations</li>
-      </ul>
+      <Container>
+        <Row>
+          <Col>
+            <h3>Discovery &amp; Research</h3>
+            <ul>
+              <li className="completed">Stakeholder interviewing </li>
+              <li className="completed">Project Planning </li>
+              <li className="completed">Competitive/ Comparative Analysis</li>
+              <li className="active">User Research</li>
+              <li>Persona Creation</li>
+              <li>Best Practices Research</li>
+            </ul>
+
+            <h3>Sketching &amp; Ideation</h3>
+            <ul>
+              <li>User Stories</li>
+              <li>Rough Sketches</li>
+            </ul>
+          </Col>
+          <Col>
+            <h3>Narrowing Scope &amp; Structure </h3>
+            <ul>
+              <li>User Flows</li>
+              <li>Scenarios</li>
+              <li>Sitemap</li>
+              <li>Wireframes </li>
+            </ul>
+            <h3>Prototyping &amp; Testing</h3>
+            <ul>
+              <li>Prototype</li>
+              <li>Usability testing</li>
+              <li>Multiple prototype iterations</li>
+            </ul>
+          </Col>
+        </Row>
+      </Container>
+
+
+
     </TabPanel>
-    <TabPanel>The results of the survey</TabPanel>
-    <TabPanel>The dev process (Tools like Trello)</TabPanel>
+
   </Tabs>
 );
 
