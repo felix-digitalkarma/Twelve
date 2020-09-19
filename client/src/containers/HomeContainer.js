@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
-import HomePage from '../components/HomePage';
-import ducks from '../redux/modules/ducks';
+import HomePage from '../components/pages/Home/HomePage';
 
 const mapStateToProps = state => {
   return {
@@ -10,7 +9,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getDucks: () => dispatch(ducks.thunks.getDucks())
+    getSurvey: () => dispatch(ducks.thunks.getDucks())
   }
 }
 

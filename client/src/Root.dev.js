@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import Routes from './routing/Routes';
-import NavBar from './components/NavBar';
+import NavBar from './components/navigation/NavBar';
 
 const App = () => {
   return (

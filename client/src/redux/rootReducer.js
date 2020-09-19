@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
-
-import ducks from './modules/ducks';
+// import surveys from modules
 
 export default combineReducers({
-  [ducks.constants.NAME]: ducks.reducer
+
 })
