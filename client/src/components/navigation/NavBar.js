@@ -2,7 +2,7 @@ import React from 'react'
 
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-md navbar-dark">
+    <nav className="navbar navbar-expand-md navbar-light">
       <div className="container-xl">
         <a className="navbar-brand" href="#"><i className="fas fa-fire mr-10"></i>Twelve.Community</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarmenu" aria-controls="navbarmenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,7 +17,7 @@ const NavBar = () => {
               <a className="nav-link" href="https://github.com/felix-digitalkarma/Twelve" target="_blank">Github</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="mailto:felix.montanez@gmail.com?subject=Inquiry from Twelve" tabIndex="-1" aria-disabled="false" target="_blank">Contact</a>
+              <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true" target="_blank">Login</a>
             </li>
           </ul>
         </div>
