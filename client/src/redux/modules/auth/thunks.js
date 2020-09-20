@@ -1,11 +1,11 @@
 import * as actions from './actions';
 import api from '../../utils/api';
 
-// import axios from 'axios';
 import alerts from '../alerts';
 import modal from '../modal';
-import profiles from '../profiles';
-import addresses from '../addresses';
+
+//import profiles from '../profiles';
+//import addresses from '../addresses';
 
 // import address
 

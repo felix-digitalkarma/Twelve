@@ -32,6 +32,7 @@
     "react-dom": "^16.13.1",
     "react-draft-wysiwyg": "^1.14.5",
     "react-dropzone": "^11.0.2",
+    "react-fontawesome": "^1.7.1",
     "react-google-maps": "^9.4.5",
     "react-hot-loader": "^4.12.21",
     "react-html-parser": "^2.0.2",

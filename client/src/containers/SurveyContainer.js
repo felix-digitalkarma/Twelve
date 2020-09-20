@@ -1,11 +1,12 @@
-import React from 'react'
+import { connect } from 'react-redux';
+import SurveyPage from '../components/pages/Survey/SurveyPage';
 
-const SurveyContainer = () => {
-  return (
-    <div>
-      <h1>Survey Container</h1>
-    </div>
-  )
+const mapStateToProps = state => {
+  return {}
 }
 
-export default SurveyContainer
+const mapDispatchToProps = dispatch => {
+  return {}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SurveyPage);
