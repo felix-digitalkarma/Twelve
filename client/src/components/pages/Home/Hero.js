@@ -1,9 +1,13 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
 
+import group from '../../../assets/crp_unsplash.jpg';
+import conference from '../../../assets/daanstevens_group.jpg';
+
+
 const Hero = () => {
   return (
-    <Container className="text-center">
+    <Container className="text-center" fluid>
       <Row>
         <Col>
           <div id="myCarousel" className="carousel slide bg-none" data-ride="carousel">
@@ -13,7 +17,7 @@ const Hero = () => {
             </ol>
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#000" /></svg>
+                <img className="bd-placeholder-img" width="100%" height="100%" src={group} />
                 <div className="container">
                   <div className="carousel-caption text-left">
                     <h1>Community Mission</h1>
@@ -23,7 +27,7 @@ const Hero = () => {
                 </div>
               </div>
               <div className="carousel-item">
-                <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#000" /></svg>
+                <img className="bd-placeholder-img" width="100%" height="100%" src={conference} />
                 <div className="container">
                   <div className="carousel-caption">
                     <h1>Find your recovery.</h1>
