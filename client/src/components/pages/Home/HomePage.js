@@ -64,14 +64,15 @@ const HomePage = () => {
               <Col md={7} className="order-md-1">
                 <h2 className="featurette-heading">And the <span className="text-muted">User Experience (UX) Process.</span></h2>
                 <p className="lead">How much impact could your story have on others from the local community to across the world?</p>
-                <p>The User Experience (UX) design approach allows for <br />
-                  <ul>
-                    <li>Discovery &amp; Research,</li>
-                    <li>Sketching &amp; Ideation,</li>
-                    <li>Narrowing Scope &amp; Defining Structure</li>
-                    <li>Prototyping &amp; Testing</li>
-                  </ul>
-                </p>
+                <p>The User Experience (UX) design approach allows for: </p>
+
+
+                <ul>
+                  <li>Discovery &amp; Research,</li>
+                  <li>Sketching &amp; Ideation,</li>
+                  <li>Narrowing Scope &amp; Defining Structure</li>
+                  <li>Prototyping &amp; Testing</li>
+                </ul>
                 <p>Through this process, we discover the success and failures around our user along with the pain they've experienced.</p>
                 <p>From hearing their story, we can then start solving for their true needs.</p>
               </Col>

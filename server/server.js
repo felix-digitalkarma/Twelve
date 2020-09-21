@@ -13,7 +13,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 /* TODO: Determine final upload strategy */
-app.use('/api/ducks', require('./routes/Duck.route'));
+app.use('/api/users', require('./routes/User.route'));
+app.use('/api/auth', require('./routes/Auth.route'));
 
 // serve static assets in production
 if (process.env.NODE_ENV === 'production') {

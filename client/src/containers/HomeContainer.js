@@ -2,15 +2,11 @@ import { connect } from 'react-redux';
 import HomePage from '../components/pages/Home/HomePage';
 
 const mapStateToProps = state => {
-  return {
-    ducks: state.ducks
-  }
+  return {}
 }
 
 const mapDispatchToProps = dispatch => {
-  return {
-    getSurvey: () => dispatch(ducks.thunks.getDucks())
-  }
+  return {}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

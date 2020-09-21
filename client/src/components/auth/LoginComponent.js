@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'reactstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 const LoginComponent = props => {
   const { login } = props;
@@ -15,50 +15,56 @@ const LoginComponent = props => {
   };
 
   return (
-    <Fragment>
-      <div className='container m-10-20 d-block'>
-        <form onSubmit={onSubmit}>
-          <div className='form-group'></div>
-          <div className='form-group text-left'>
-            <label htmlFor='email' className='text-light'>
-              Email
+    <Container fluid>
+      <Row>
+        <Col>
+          <Container>
+            <form onSubmit={onSubmit}>
+              <span className="navbar-brand text-light"><i className="fas fa-fire mr-10"></i>Twelve.Community</span>
+              <div className='form-group text-left'>
+                <label htmlFor='email' className='text-light'>
+                  Email
 						</label>
-            <input
-              type='email'
-              placeholder='Email Address'
-              name='email'
-              className='form-control lcp-input'
-              value={email}
-              onChange={onChange}
-              required
-              autoComplete='false'
-            />
-          </div>
-          <div className='form-group text-left'>
-            <label htmlFor='password' className='text-light'>
-              Password
+                <input
+                  type='email'
+                  placeholder='Email Address'
+                  name='email'
+                  className='form-control'
+                  value={email}
+                  onChange={onChange}
+                  required
+                  autoComplete='false'
+                />
+              </div>
+              <div className='form-group text-left'>
+                <label htmlFor='password' className='text-light'>
+                  Password
 						</label>
-            <input
-              type='password'
-              placeholder='Password'
-              name='password'
-              className='form-control lcp-input'
-              value={password}
-              onChange={onChange}
-              autoComplete='false'
-            />
-          </div>
-          <div className='row text-center'>
-            <p className='text-primary w-100'>Forgot your password?</p>
-          </div>
-          <div className='form-group'>
-            <Button type='submit' className='lcp-btn btn-primary'>
-              Login
+                <input
+                  type='password'
+                  placeholder='Password'
+                  name='password'
+                  className='form-control'
+                  value={password}
+                  onChange={onChange}
+                  autoComplete='false'
+                />
+              </div>
+              <div className='row text-center'>
+                <p className='text-primary w-100'>Forgot your password?</p>
+              </div>
+              <div className='form-group'>
+                <Button type='submit' className='lcp-btn btn-primary'>
+                  Login
 						</Button>
-          </div>
-        </form>
-      </div>
-    </Fragment>
+              </div>
+            </form>
+
+          </Container>
+        </Col>
+      </Row>
+    </Container>
+
   );
 };
 

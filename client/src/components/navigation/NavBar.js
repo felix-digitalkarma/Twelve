@@ -1,7 +1,24 @@
-import React from 'react'
+import React, { Fragment, useEffect } from 'react'
 import { Link } from 'react-router-dom';
+import Modal from '../partials/Modal.Component';
+import Login from '../auth/LoginComponent';
 
-const NavBar = () => {
+const NavBar = (props) => {
+  const {
+    modal,
+    showModal,
+    hideModal,
+    auth,
+    login,
+    logout,
+    getAuth,
+  } = props;
+
+  const { isAuthenticated, user } = auth;
+
+  useEffect(() => {
+    getAuth();
+  }, [getAuth]);
   return (
     <nav className="navbar navbar-expand-md navbar-light bg-light">
       <div className="container-xl">
@@ -17,12 +34,35 @@ const NavBar = () => {
             <li className="nav-item">
               <a className="nav-link" href="https://github.com/felix-digitalkarma/Twelve" target="_blank">Github</a>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/register">Register</Link>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true" target="_blank">Login</a>
-            </li>
+            {isAuthenticated ? (
+
+              <Fragment>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/" onClick={logout}>Logout</Link>
+                </li>
+              </Fragment>
+            ) : (
+                <Fragment>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/register">Register</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Modal show={modal.show} handleClose={() => hideModal()}>
+                      <Login
+                        login={login}
+                        isAuthenticated={isAuthenticated}
+                        user={user}
+                      />
+                    </Modal>
+                    <button
+                      className="btn navbar-item nav-link text-primary"
+                      onClick={() => showModal()}
+                    >
+                      Login
+          </button>
+                  </li>
+                </Fragment>
+              )}
           </ul>
         </div>
       </div>

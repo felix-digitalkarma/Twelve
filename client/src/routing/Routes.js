@@ -3,15 +3,17 @@ import { Route, Switch } from 'react-router-dom';
 
 import HomeContainer from '../containers/HomeContainer';
 import SurveyContainer from '../containers/SurveyContainer';
-import RegisterComponent from '../components/auth/RegisterComponent';
+import RegisterContainer from '../containers/RegisterContainer';
 import LoginComponent from '../components/auth/LoginComponent';
+
+import AuthRoute from '../routing/AuthRoute';
 
 const Routes = () => (
   <Switch>
     <Route path="/" exact component={HomeContainer} />
-    <Route path="/register" component={RegisterComponent} />
-    <Route path="/login" component={LoginComponent} />
-    <Route path="/survey" component={SurveyContainer} />
+    <AuthRoute type="guest" path="/register" component={RegisterContainer} />
+    <AuthRoute type="guest" path="/login" component={LoginComponent} />
+    <AuthRoute type="admin" path="/survey" component={SurveyContainer} />
   </Switch>
 );
 

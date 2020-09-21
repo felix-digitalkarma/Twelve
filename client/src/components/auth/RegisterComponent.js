@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
+
 import { Container, Row, Col } from 'react-bootstrap';
 
 const RegisterComponent = props => {
-  const { registerUser } = props;
-
+  const { registerUser, setAlert, auth } = props;
+  const { isAuthenticated } = auth;
   const [formData, setFormData] = useState({
     firstName: '',
     lastInitial: '',
@@ -34,10 +36,13 @@ const RegisterComponent = props => {
     } else if (email !== remail) {
       setAlert('Emails do not match.', 'danger');
     } else {
-      console.log('submitting with form data: ', formData);
       registerUser(formData);
     }
   };
+
+  if (isAuthenticated) {
+    return <Redirect to='/' />;
+  }
 
   return (
     <Container className='text-dark bg-light' fluid="md" >
