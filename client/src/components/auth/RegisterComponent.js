@@ -106,7 +106,6 @@ const RegisterComponent = props => {
                           onChange={onChange}
                           className='form-control'
                           placeholder='Phone (optional)'
-                          required
                         />
                         <div className='invalid-feedback'>Valid phone number is required.</div>
                       </div>
@@ -125,6 +124,7 @@ const RegisterComponent = props => {
                           value={email}
                           onChange={onChange}
                           autoComplete='false'
+                          required
                         />
                       </div>
                       <div className='invalid-feedback text-light'>Please enter a valid email address for community updates.</div>
@@ -141,6 +141,7 @@ const RegisterComponent = props => {
                           required
                           className='form-control'
                           placeholder='jwick@email.com'
+                          required
                         />
                         <div className='invalid-feedback'> Please enter a valid email address for community updates.</div>
                       </div>
@@ -174,6 +175,7 @@ const RegisterComponent = props => {
                           autoComplete='false'
                           className='form-control'
                           placeholder='******'
+                          required
                         />
                         <div className='invalid-feedback'>Passwords must match.</div>
                       </div>

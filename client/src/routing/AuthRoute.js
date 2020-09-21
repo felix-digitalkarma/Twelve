@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 
 const AuthRoute = (props) => {
   const { type, isAuthenticated, user } = props;
-
+  console.log('authroute user: ', user);
   // rules
   // admin route - admin: needs role 1
-  // private route - national:2 / regional: 3 / local: 4
-  // guest route - anonymous: 5
+  // private route - service: 2
+  // guest route - newcomer: 3
 
   // Handle the redirects
   // guest route and user is authenticated, we redirect them to rentals
