@@ -39,7 +39,7 @@ const NavBar = (props) => {
 
               <Fragment>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/stories">User Stories</Link>
+                  <Link className="nav-link disabled" to="/stories">User Stories</Link>
                 </li>
                 <li className="nav-item">
                   <div className="nav-link" onClick={e => handleLogout(e)}>Logout</div>
