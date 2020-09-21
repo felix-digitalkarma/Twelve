@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
+
 const SurveyPage = props => {
   return (
     <Container className="100vh">
@@ -11,10 +12,6 @@ const SurveyPage = props => {
       </Row>
     </Container>
   )
-}
-
-SurveyPage.propTypes = {
-
 }
 
 export default SurveyPage

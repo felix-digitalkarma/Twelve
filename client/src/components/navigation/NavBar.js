@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-md navbar-light">
+    <nav className="navbar navbar-expand-md navbar-light bg-light">
       <div className="container-xl">
         <a className="navbar-brand" href="/"><i className="fas fa-fire mr-10"></i>Twelve.Community</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarmenu" aria-controls="navbarmenu" aria-expanded="false" aria-label="Toggle navigation">

@@ -1,11 +1,9 @@
-import React, { Fragment, useState } from 'react';
-import { Redirect } from 'react-router-dom';
-import { Container, Row, Col, Button } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 
-const RegistrationPageComponent = props => {
-  const { registerUser, auth } = props;
-  const { isAuthenticated } = auth;
+const RegisterComponent = props => {
+  const { registerUser } = props;
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastInitial: '',
@@ -36,30 +34,28 @@ const RegistrationPageComponent = props => {
     } else if (email !== remail) {
       setAlert('Emails do not match.', 'danger');
     } else {
+      console.log('submitting with form data: ', formData);
       registerUser(formData);
     }
   };
 
-  if (isAuthenticated) {
-    return <Redirect to='/' />;
-  }
-
   return (
-    <Container className='text-light bg-dark ' fluid>
+    <Container className='text-dark bg-light' fluid="md" >
       <Row>
         <Col className='p-3'>
-          <h1 className='text-light'>Registration</h1>
+          <h1 className='text-dark'>Registration</h1>
           <p className='text-muted'>
             Welcome to Twelve.Community. Our primary mission is to create a safe and secure platform for all to share personal stories of recovery, become involved with our communities through service, guiding others through sponsorship, and supporting our local and global communities through charitable donation.
 					</p>
+          <h4 className='text-center'>The Basics</h4>
         </Col>
       </Row>
       <Row>
-        <Col className='p-3'>
+        <Col>
           <form onSubmit={onSubmit}>
             <Row>
-              <Col md='6' className='bg-form p-3'>
-                <h4 className='text-light text-center border-primary p-2'>User Details</h4>
+              <Col>
+
                 <div className='form-row'>
                   <div className='form-group col-md-6'>
                     <label htmlFor='firstName'>
@@ -71,7 +67,6 @@ const RegistrationPageComponent = props => {
                       className='form-control'
                       placeholder='First name'
                       id='firstName'
-                      s
                       value={firstName}
                       onChange={onChange}
                       required
@@ -96,8 +91,9 @@ const RegistrationPageComponent = props => {
                     <div className='invalid-feedback'>Valid last initial required.</div>
                   </div>
                 </div>
+
                 <div className='form-row'>
-                  <div className='form-group col'>
+                  <div className='form-group col-md-6'>
                     <label htmlFor='email'>
                       Email <span className='text-muted'>(required)</span>
                     </label>
@@ -115,9 +111,7 @@ const RegistrationPageComponent = props => {
                   <div className='invalid-feedback text-light'>
                     Please enter a valid email address for community updates.
 									</div>
-                </div>
-                <div className='form-row'>
-                  <div className='form-group col'>
+                  <div className='form-group col-md-6'>
                     <label htmlFor='remail'>
                       Confirm Email <span className='text-muted'>(required)</span>
                     </label>
@@ -136,8 +130,9 @@ const RegistrationPageComponent = props => {
 										</div>
                   </div>
                 </div>
+
                 <div className='form-row'>
-                  <div className='form-group col'>
+                  <div className='form-group col-md-6'>
                     <label htmlFor='password'>
                       Password <span className='text-muted'>(required)</span>
                     </label>
@@ -154,9 +149,7 @@ const RegistrationPageComponent = props => {
                     />
                     <div className='invalid-feedback'>Please enter a valid password.</div>
                   </div>
-                </div>
-                <div className='form-row'>
-                  <div className='form-group col'>
+                  <div className='form-group col-md-6'>
                     <label htmlFor='password2'>Confirm Password</label>
                     <input
                       type='password'
@@ -172,9 +165,11 @@ const RegistrationPageComponent = props => {
                       Passwords must match.
 										</div>
                   </div>
+
                 </div>
+
                 <div className='form-row'>
-                  <div className='form-group col-md-6'>
+                  <div className='form-group col'>
                     <label htmlFor='phone'>
                       Phone <span className='text-muted'>(optional)</span>
                     </label>
@@ -207,4 +202,4 @@ const RegistrationPageComponent = props => {
   );
 };
 
-export default RegistrationPageComponent;
+export default RegisterComponent;

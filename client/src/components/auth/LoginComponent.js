@@ -1,10 +1,9 @@
 import React, { Fragment, useState } from 'react';
-import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Button } from 'reactstrap';
 
-const Login = props => {
-  const { login, user, isAuthenticated } = props;
+const LoginComponent = props => {
+  const { login } = props;
   const [formData, setFormData] = useState({ email: '', password: '' });
   const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -14,11 +13,6 @@ const Login = props => {
     e.preventDefault();
     login(formData);
   };
-
-  // redirect if logged in
-  if (isAuthenticated && user && user.role === 3) {
-    return <Redirect to='/dashboard' />;
-  }
 
   return (
     <Fragment>
@@ -40,7 +34,6 @@ const Login = props => {
               autoComplete='false'
             />
           </div>
-
           <div className='form-group text-left'>
             <label htmlFor='password' className='text-light'>
               Password
@@ -69,9 +62,10 @@ const Login = props => {
   );
 };
 
-Login.propTypes = {
+LoginComponent.propTypes = {
   login: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool,
   role: PropTypes.number,
 };
-export default Login;
+
+export default LoginComponent;
