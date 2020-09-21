@@ -12,8 +12,8 @@ export const loadUser = () => async dispatch => {
   }
   try {
     const res = await api.get('/auth');
-    const { firstName } = res.data;
-    dispatch(alerts.creators.setAlert(`Welcome ${firstName} !`, 'success'))
+    const { firstName, lastInitial } = res.data;
+    dispatch(alerts.creators.setAlert(`Welcome ${firstName} ${lastInitial}!`, 'success'))
     dispatch(actions.userLoaded(res.data));
   } catch (err) {
     if (err && err.response) {
