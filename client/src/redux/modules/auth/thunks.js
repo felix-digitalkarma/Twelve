@@ -2,6 +2,7 @@ import * as actions from './actions';
 import api from '../../utils/api';
 
 import alerts from '../alerts';
+import modal from '../modal';
 
 import setAuthToken from '../../utils/setAuthToken';
 
@@ -89,4 +90,5 @@ export const register = ({
 export const logout = () => dispatch => {
   dispatch(actions.clear());
   dispatch(actions.logout());
+  dispatch(modal.actions.hide());
 };
