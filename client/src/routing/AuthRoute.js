@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 
 const AuthRoute = (props) => {
   const { type, isAuthenticated, user } = props;
-  console.log('authroute user: ', user);
+
   // rules
-  // admin route - admin: needs role 1
+  // admin route - admin: 1
   // private route - service: 2
   // guest route - newcomer: 3
 
