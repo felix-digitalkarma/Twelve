@@ -16,6 +16,12 @@ const NavBar = (props) => {
 
   const { isAuthenticated, user } = auth;
 
+  const handleLogout = (e) => {
+    e.preventDefault();
+    logout();
+    hideModal();
+  };
+
   useEffect(() => {
     getAuth();
   }, [getAuth]);
@@ -36,7 +42,7 @@ const NavBar = (props) => {
                   <Link className="nav-link" to="/stories">User Stories</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/" onClick={logout}>Logout</Link>
+                  <div className="nav-link" onClick={e => handleLogout(e)}>Logout</div>
                 </li>
 
               </Fragment>

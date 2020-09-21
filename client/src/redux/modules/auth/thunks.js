@@ -90,5 +90,4 @@ export const register = ({
 export const logout = () => dispatch => {
   dispatch(actions.clear());
   dispatch(actions.logout());
-  dispatch(modal.actions.hide());
 };
