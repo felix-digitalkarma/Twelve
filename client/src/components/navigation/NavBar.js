@@ -18,7 +18,7 @@ const NavBar = () => {
               <a className="nav-link" href="https://github.com/felix-digitalkarma/Twelve" target="_blank">Github</a>
             </li>
             <li className="nav-item">
-              <Link className="nav-link disabled" to="/register">Register</Link>
+              <Link className="nav-link" to="/register">Register</Link>
             </li>
             <li className="nav-item">
               <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true" target="_blank">Login</a>
