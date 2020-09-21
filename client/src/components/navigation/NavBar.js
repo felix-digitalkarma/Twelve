@@ -40,6 +40,7 @@ const NavBar = (props) => {
                 <li className="nav-item">
                   <Link className="nav-link" to="/" onClick={logout}>Logout</Link>
                 </li>
+                <li className="nav-item">User Stories</li>
               </Fragment>
             ) : (
                 <Fragment>
@@ -47,19 +48,19 @@ const NavBar = (props) => {
                     <Link className="nav-link" to="/register">Register</Link>
                   </li>
                   <li className="nav-item">
-                    <Modal show={modal.show} handleClose={() => hideModal()}>
+                    <Modal show={modal.show} handleClose={hideModal}>
                       <Login
                         login={login}
                         isAuthenticated={isAuthenticated}
                         user={user}
                       />
                     </Modal>
-                    <button
-                      className="btn navbar-item nav-link text-primary"
-                      onClick={() => showModal()}
+                    <div
+                      className="nav-link"
+                      onClick={showModal}
                     >
-                      Login
-          </button>
+                      <span>Login</span>
+                    </div>
                   </li>
                 </Fragment>
               )}
