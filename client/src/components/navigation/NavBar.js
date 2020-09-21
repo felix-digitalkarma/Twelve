@@ -28,22 +28,26 @@ const NavBar = (props) => {
         </button>
         <div className="collapse navbar-collapse" id="navbarmenu">
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <a className="nav-link" href="https://www.linkedin.com/in/felixmontanez/" target="_blank">LinkedIn</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="https://github.com/felix-digitalkarma/Twelve" target="_blank">Github</a>
-            </li>
+
             {isAuthenticated ? (
 
               <Fragment>
                 <li className="nav-item">
+                  <Link className="nav-link" to="/stories">User Stories</Link>
+                </li>
+                <li className="nav-item">
                   <Link className="nav-link" to="/" onClick={logout}>Logout</Link>
                 </li>
-                <li className="nav-item">User Stories</li>
+
               </Fragment>
             ) : (
                 <Fragment>
+                  <li className="nav-item">
+                    <a className="nav-link" href="https://www.linkedin.com/in/felixmontanez/" target="_blank">LinkedIn</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="https://github.com/felix-digitalkarma/Twelve" target="_blank">Github</a>
+                  </li>
                   <li className="nav-item">
                     <Link className="nav-link" to="/register">Register</Link>
                   </li>
