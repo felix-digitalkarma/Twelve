@@ -1,5 +1,6 @@
 import React from 'react'
 import { Carousel } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import group from '../../assets/images/crp_unsplash.jpg';
 import conference from '../../assets/images/daanstevens_group.jpg';
@@ -21,7 +22,8 @@ const HeroCarousel = () => {
         <Carousel.Caption>
           <h1>Find your recovery.</h1>
           <p>Anonymity as a designing principle, recovery as a designing purpose, connection through modern technology.</p>
-          <p><a className="btn btn-lg btn-primary" href="https://forms.gle/VHt4Hrb9QGiBTVcWA" target="_blank" role="button">Take Survey</a></p>
+          <p>
+            <Link to="/survey" className="btn btn-lg btn-success">Survey Page</Link></p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

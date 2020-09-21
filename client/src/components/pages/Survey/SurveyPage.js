@@ -1,12 +1,15 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-
+import { Container, Row, Col } from 'react-bootstrap';
 const SurveyPage = props => {
   return (
-    <div>
-      <h1>WIP: Survey page</h1>
-      <p>This is a placeholder page for surveys and results.</p>
-    </div>
+    <Container className="100vh">
+      <Row>
+        <Col>
+          <h1>WIP: Survey page</h1>
+          <p>This is a placeholder page for surveys and results.</p>
+        </Col>
+      </Row>
+    </Container>
   )
 }
 
