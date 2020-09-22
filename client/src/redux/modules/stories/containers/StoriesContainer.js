@@ -10,6 +10,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    addStory: story => dispatch(stories.thunks.addStory(story)),
     getStories: () => dispatch(stories.thunks.getStories()),
   };
 };
