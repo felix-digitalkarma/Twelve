@@ -45,7 +45,7 @@ const RegisterComponent = props => {
   }
 
   return (
-    <Container className='text-dark bg-light' fluid="md" >
+    <Container className='text-dark' fluid="md" >
       <Row>
         <Col className='p-3'>
           <h1 className='text-dark'>Welcome!</h1>

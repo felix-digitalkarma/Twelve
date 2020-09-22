@@ -5,7 +5,7 @@ import HeroCarousel from '../../partials/Hero.Carousel';
 import ux_logo from '../../../assets/images/vector_ux.jpg';
 import me from '../../../assets/images/me.jpg';
 import train_station from '../../../assets/images/PittsTrain.jpg';
-
+import machine from '../../../assets/images/noun_Machine Learning_55508.png';
 const HomePage = () => {
   return (
     <Container fluid="md">
@@ -29,8 +29,8 @@ const HomePage = () => {
                 <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
               </Col>
               <Col lg={4}>
-                <i className="fas fa-users fa-5x"></i>
-                <h2>Connection</h2>
+                <img src={machine} alt="machine learning" height="120" />
+                <h2>Learning</h2>
                 <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper..</p>
               </Col>
             </Row>
