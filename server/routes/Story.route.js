@@ -25,7 +25,7 @@ storyRoute.post('/', auth, async (req, res) => {
 // get api/stories
 storyRoute.get('/', async (req, res) => {
   try {
-    const stories = await storyModel.find();
+    const stories = await storyModel.find().populate('user', ['firstName', 'lastInitial', 'role', 'created']);
     res.json(stories);
   } catch (err) {
     console.log(err);
