@@ -17,8 +17,8 @@ const Routes = () => (
     <Route path="/" exact component={HomeContainer} />
     <AuthRoute type="guest" path="/register" component={RegisterContainer} />
     <AuthRoute type="guest" path="/login" component={LoginComponent} />
-    <AuthRoute type="private" path="/results" component={SurveyContainer} />
-    <AuthRoute type="private" path="/stories" component={StoriesContainer} />
+    <AuthRoute type="guest" path="/results" component={SurveyContainer} />
+    <AuthRoute type="guest" path="/stories" component={StoriesContainer} />
     <AuthRoute type="admin" path="/dashboard" component={DashboardContainer} />
   </Switch>
 );

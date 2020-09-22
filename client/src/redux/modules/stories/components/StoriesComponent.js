@@ -28,8 +28,9 @@ const StoriesComponent = (props) => {
               <Fragment key={story._id}>
                 <h3>{story.title}</h3>
                 <p>{story.body}</p>
+                {story.user && <p>By: {story.user.firstName} {story.user.lastInitial}</p>}
                 <p>Shared <Moment format="LLL">{story.shared}</Moment></p>
-
+                <hr className="featurette-divider" />
               </Fragment>
             ))}
 
