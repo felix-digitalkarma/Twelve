@@ -19,19 +19,19 @@ const HomePage = () => {
           <Container className="marketing">
             <Row className="text-center">
               <Col lg={4}>
-                <i className="fa fa-user-shield fa-5x"></i>
+                <i className="fa fa-user-shield fa-5x"></i><br />
                 <h2>Anonymity</h2>
-                <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+                <p>Anonymity facilitates honesty. Honesty helps build trust. Keeping anonymity sacred helps ensure privacy for all. Being able to feel safe to be your authentic self allows recovery for everyone.</p>
               </Col>
               <Col lg={4}>
                 <i className="fas fa-hand-holding-heart fa-5x"></i>
                 <h2>Recovery</h2>
-                <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+                <p>Recovery, finding faith or religion can be a deeply intimate and personal experience. We each follow the path in our own story, finding recovery guided by a power greater than ourselves. We find strength in sharing and hearing our stories.</p>
               </Col>
               <Col lg={4}>
                 <img src={machine} alt="machine learning" height="120" />
-                <h2>Learning</h2>
-                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper..</p>
+                <h2>Recommendation</h2>
+                <p>By looking to our past, our shared stories of hope and recovery, we can then start to understand ourselves, finding inspiration for our own recovery.</p>
               </Col>
             </Row>
           </Container>

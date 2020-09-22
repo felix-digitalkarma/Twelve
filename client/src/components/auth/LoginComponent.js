@@ -5,9 +5,9 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 const LoginComponent = props => {
   const { login } = props;
   const [formData, setFormData] = useState({ email: '', password: '' });
-  const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
-
   const { email, password } = formData;
+
+  const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = async e => {
     e.preventDefault();
@@ -20,35 +20,27 @@ const LoginComponent = props => {
         <Col>
           <Container>
             <form onSubmit={onSubmit}>
-              <span className="navbar-brand text-light"><i className="fas fa-fire mr-10"></i>Twelve.Community</span>
-              <div className='form-group text-left'>
-                <label htmlFor='email' className='text-light'>
-                  Email
-						</label>
+              <h3 className="navbar-brand text-light"><i className="fas fa-fire mr-10"></i>Twelve.Community</h3>
+
+              <div className="form-label-group">
                 <input
-                  type='email'
-                  placeholder='Email Address'
-                  name='email'
-                  className='form-control'
+                  type="email"
+                  className="form-control"
+                  name="email"
                   value={email}
                   onChange={onChange}
-                  required
-                  autoComplete='false'
-                />
+                  placeholder="Email address"
+                  required autofocus />
+                <label for="inputEmail">Email address</label>
               </div>
-              <div className='form-group text-left'>
-                <label htmlFor='password' className='text-light'>
-                  Password
-						</label>
-                <input
-                  type='password'
+              <div className="form-label-group">
+                <input type='password'
                   placeholder='Password'
                   name='password'
-                  className='form-control'
+                  className='form-control text-left'
                   value={password}
-                  onChange={onChange}
-                  autoComplete='false'
-                />
+                  onChange={onChange} />
+                <label for="inputPassword">Password</label>
               </div>
               <div className='row text-center'>
                 <p className='text-primary w-100'>Forgot your password?</p>
