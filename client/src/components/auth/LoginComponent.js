@@ -27,22 +27,24 @@ const LoginComponent = props => {
                   <div className="form-label-group">
                     <input
                       type="email"
+                      id="inputEmail"
                       className="form-control"
                       name="email"
                       value={email}
                       onChange={onChange}
                       placeholder="Email address"
-                      required autofocus />
-                    <label for="inputEmail">Email address</label>
+                      required autoFocus />
+                    <label htmlFor="inputEmail">Email address</label>
                   </div>
                   <div className="form-label-group">
                     <input type='password'
+                      id="inputPassword"
                       placeholder='Password'
                       name='password'
                       className='form-control text-left'
                       value={password}
                       onChange={onChange} />
-                    <label for="inputPassword">Password</label>
+                    <label htmlFor="inputPassword">Password</label>
                   </div>
                   <div className='row text-center'>
                     <p className='text-primary w-100'>Forgot your password?</p>

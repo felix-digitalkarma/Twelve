@@ -6,9 +6,9 @@ import RegisterContainer from '../containers/RegisterContainer';
 import LoginComponent from '../components/auth/LoginComponent';
 
 import SurveyContainer from '../containers/SurveyContainer';
-import StoryContainer from '../containers/StoryContainer';
-import DashboardContainer from '../containers/DashboardContainer';
 
+import DashboardContainer from '../containers/DashboardContainer';
+import StoriesContainer from '../redux/modules/stories/containers/StoriesContainer';
 
 import AuthRoute from '../routing/AuthRoute';
 
@@ -18,7 +18,7 @@ const Routes = () => (
     <AuthRoute type="guest" path="/register" component={RegisterContainer} />
     <AuthRoute type="guest" path="/login" component={LoginComponent} />
     <AuthRoute type="private" path="/results" component={SurveyContainer} />
-    <AuthRoute type="private" path="/stories" component={StoryContainer} />
+    <AuthRoute type="private" path="/stories" component={StoriesContainer} />
     <AuthRoute type="admin" path="/dashboard" component={DashboardContainer} />
   </Switch>
 );
