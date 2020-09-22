@@ -19,38 +19,43 @@ const LoginComponent = props => {
       <Row>
         <Col>
           <Container>
-            <form onSubmit={onSubmit}>
-              <h3 className="navbar-brand text-light"><i className="fas fa-fire mr-10"></i>Twelve.Community</h3>
+            <Row>
+              <Col>
+                <form onSubmit={onSubmit}>
+                  <h3 className="navbar-brand text-light"><i className="fas fa-fire mr-10"></i>Twelve.Community</h3>
 
-              <div className="form-label-group">
-                <input
-                  type="email"
-                  className="form-control"
-                  name="email"
-                  value={email}
-                  onChange={onChange}
-                  placeholder="Email address"
-                  required autofocus />
-                <label for="inputEmail">Email address</label>
-              </div>
-              <div className="form-label-group">
-                <input type='password'
-                  placeholder='Password'
-                  name='password'
-                  className='form-control text-left'
-                  value={password}
-                  onChange={onChange} />
-                <label for="inputPassword">Password</label>
-              </div>
-              <div className='row text-center'>
-                <p className='text-primary w-100'>Forgot your password?</p>
-              </div>
-              <div className='form-group'>
-                <Button type='submit' className='lcp-btn btn-primary'>
-                  Login
-						</Button>
-              </div>
-            </form>
+                  <div className="form-label-group">
+                    <input
+                      type="email"
+                      className="form-control"
+                      name="email"
+                      value={email}
+                      onChange={onChange}
+                      placeholder="Email address"
+                      required autofocus />
+                    <label for="inputEmail">Email address</label>
+                  </div>
+                  <div className="form-label-group">
+                    <input type='password'
+                      placeholder='Password'
+                      name='password'
+                      className='form-control text-left'
+                      value={password}
+                      onChange={onChange} />
+                    <label for="inputPassword">Password</label>
+                  </div>
+                  <div className='row text-center'>
+                    <p className='text-primary w-100'>Forgot your password?</p>
+                  </div>
+                  <div className='form-group p-3'>
+                    <Button
+                      type='submit'
+                      className='lcp-btn btn-primary'>Login</Button>
+                  </div>
+                </form>
+              </Col>
+            </Row>
+
 
           </Container>
         </Col>
