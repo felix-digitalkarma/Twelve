@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 /* TODO: Determine final upload strategy */
 app.use('/api/users', require('./routes/User.route'));
 app.use('/api/auth', require('./routes/Auth.route'));
+app.use('/api/stories', require('./routes/Story.route'));
 
 // serve static assets in production
 if (process.env.NODE_ENV === 'production') {
