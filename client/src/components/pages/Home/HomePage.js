@@ -26,12 +26,12 @@ const HomePage = () => {
               <Col lg={4}>
                 <i className="fas fa-hand-holding-heart fa-5x"></i>
                 <h2>Recovery</h2>
-                <p>Recovery, finding faith or religion can be a deeply intimate and personal experience. We each follow the path in our own story, finding recovery guided by a power greater than ourselves. We find strength in sharing and hearing our stories.</p>
+                <p>Recovery, finding faith or religion can be a deeply intimate and personal experience. We find strength in sharing and hearing our stories.</p>
               </Col>
               <Col lg={4}>
                 <img src={machine} alt="machine learning" height="120" />
-                <h2>Recommendation</h2>
-                <p>By looking to our past, our shared stories of hope and recovery, we can then start to understand ourselves, finding inspiration for our own recovery.</p>
+                <h2>Awareness</h2>
+                <p>By looking to our shared stories, through machine learning, we can hopefully start to understand ourselves at a greater resolution, finding inspiration for our own recovery.</p>
               </Col>
             </Row>
           </Container>
@@ -40,7 +40,7 @@ const HomePage = () => {
             <Row className="featurette">
               <Col md={7} className="order-md-1">
                 <h2 className="featurette-heading">Prelude</h2>
-                <p className="lead">The pandemic has disrupted our way of living, how we connect to others through being present emotionally and physically. It has created isolation, despair and fear. For those that were on the path to recovery, suddenly being diverted off, needing to find their way. </p><p className="lead"> The pandemic has also revealed the need to still connect, even more now than ever. The engine being in-person meetings which provided a safe space to hear other stories that mirrored my own. To know that I wasn’t alone in my journey.</p><p className="lead">For those that suffer in silence, please know that you are not alone.</p>
+                <p className="lead">The pandemic has disrupted our way of living, how we connect to others through being present emotionally and physically.</p><p> It has created isolation, despair and fear. For those that were on the path to recovery, suddenly being diverted off, needing to find their way. </p><p> The pandemic has also revealed the need to still connect, even more now than ever. The engine being in-person meetings which provided a safe space to hear other stories that mirrored my own. To know that I wasn’t alone in my journey.</p><p>For those that suffer in silence, please know that you are not alone.</p>
               </Col>
               <Col md={5} className="order-md-2">
                 <img className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" src={train_station} />
@@ -62,9 +62,8 @@ const HomePage = () => {
             <hr className="featurette-divider" />
             <Row className="featurette">
               <Col md={7} className="order-md-1">
-                <h2 className="featurette-heading">And the <span className="text-muted">User Experience (UX) Process.</span></h2>
-                <p className="lead">How much impact could your story have on others from the local community to across the world?</p>
-                <p>The User Experience (UX) design approach allows for: </p>
+                <h2 className="featurette-heading"> <span className="text-muted">User Experience (UX) Process.</span></h2>
+                <p className="lead">The design approach allows for: </p>
 
 
                 <ul>
