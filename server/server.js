@@ -21,14 +21,14 @@ app.use(express.static(path.join(__dirname, 'client/dist')));
 //production mode
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/dist')));
-  app.get('*', (req, res) => {
-    res.sendfile(path.join(__dirname = 'client/dist/index.html'));
+  app.get('/*', (req, res) => {
+    res.sendfile(path.join(__dirname, 'client/dist/index.html'));
   })
 }
 
 //build mode
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/src/index.html'));
+  res.sendFile(path.join(__dirname, 'client/src/index.html'));
 })
 
 const PORT = parseInt(process.env.PORT, 10) || 5000;

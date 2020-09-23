@@ -12,8 +12,6 @@ export const loadUser = () => async dispatch => {
   }
   try {
     const res = await api.get('/auth');
-    const { firstName, lastInitial } = res.data;
-    dispatch(alerts.creators.setAlert(`Welcome ${firstName} ${lastInitial}!`, 'success'))
     dispatch(actions.userLoaded(res.data));
   } catch (err) {
     if (err && err.response) {
@@ -31,8 +29,11 @@ export const login = formData => async dispatch => {
 
   try {
     const res = await api.post('/auth', body);
+
     dispatch(actions.success(res.data));
     dispatch(loadUser());
+    dispatch(alerts.creators.setAlert(`Welcome!`, 'success'));
+
   } catch (err) {
     if (err && err.response) {
       const errors = err.response.data.errors;
