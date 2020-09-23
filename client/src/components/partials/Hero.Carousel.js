@@ -23,7 +23,7 @@ const HeroCarousel = () => {
           <h1>Find your recovery.</h1>
           <p>Anonymity as a designing principle, recovery as a designing purpose, connection through modern technology.</p>
           <p>
-            <Link to="/survey" className="btn btn-lg btn-success">Survey Page</Link></p>
+            <Link to="/stories" className="btn btn-lg btn-success">Stories</Link></p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

@@ -21,8 +21,11 @@ app.use('/api/stories', require('./routes/Story.route'));
 if (process.env.NODE_ENV === 'production') {
   // set static folder
   app.use(express.static('./client/dist'));
-  app.get('*', (req, res) => {
+  app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, './client/dist/index.html'));
+    if (err) {
+      res.status(500).send(err);
+    }
   });
 }
 
