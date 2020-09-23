@@ -25,12 +25,6 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
-// //dev mode : is this redundant?
-// app.use(express.static(path.join(__dirname, './client/dist')));
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname + '/client/dist/index.html'));
-// })
-
 const PORT = parseInt(process.env.PORT, 10) || 5000;
 
 app.listen(PORT, () => {
