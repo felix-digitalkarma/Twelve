@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import { Helmet } from 'react-helmet';
+
 import { Container, Row, Col } from 'react-bootstrap';
 import HeroCarousel from '../../partials/Hero.Carousel';
 
@@ -9,6 +11,10 @@ import machine from '../../../assets/images/noun_Machine Learning_55508.png';
 const HomePage = () => {
   return (
     <Container fluid="md">
+      <Helmet>
+        <title>Welcome to Twelve.Community</title>
+        <meta name="description" content="To create a safe and secure platform for all to share personal stories of recovery, become involved with our communities through service, guiding others through sponsorship, and supporting our local and global communities through charitable donation." />
+      </Helmet>
       <Row>
         <Col>
           <HeroCarousel />
