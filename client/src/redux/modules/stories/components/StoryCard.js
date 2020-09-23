@@ -16,7 +16,7 @@ const StoryCard = (story) => {
           <strong className="d-inline-block mb-2 text-primary">
             {user.firstName} {user.lastInitial}
           </strong>
-          <h5 className="mb-0">{title}</h5>
+          <h6 className="mb-0">{title}</h6>
           <div className="mb-1 text-muted"><Moment format="ll">{shared}</Moment></div>
           <p className="card-text mb-auto">{body.substring(0, 100)}...</p>
           <Link to={`/stories/${_id}`} className="stretched-link">More</Link>
