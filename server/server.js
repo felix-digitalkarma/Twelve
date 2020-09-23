@@ -12,25 +12,24 @@ connectDB();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-/* TODO: Determine final upload strategy */
 app.use('/api/users', require('./routes/User.route'));
 app.use('/api/auth', require('./routes/Auth.route'));
 app.use('/api/stories', require('./routes/Story.route'));
 
-app.use(express.static(path.join(__dirname, './client/dist')));
 
 //production mode
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, './client/dist')));
   app.get('/*', (req, res) => {
-    res.sendfile(path.join(__dirname = './client/dist/index.html'));
+    res.sendfile(path.join(__dirname, './client/dist/index.html'));
   })
 }
 
-//build mode
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/dist/index.html'));
-})
+// //dev mode : is this redundant?
+// app.use(express.static(path.join(__dirname, './client/dist')));
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname + '/client/dist/index.html'));
+// })
 
 const PORT = parseInt(process.env.PORT, 10) || 5000;
 
