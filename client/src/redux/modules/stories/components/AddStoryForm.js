@@ -5,7 +5,7 @@ const initialState = { title: '', body: '' };
 
 const AddStoryForm = (props) => {
 
-  const { addStory } = props;
+  const { addStory, hideModal } = props;
   const [formData, setFormData] = useState(initialState);
 
   const { title, body } = formData;
@@ -13,17 +13,15 @@ const AddStoryForm = (props) => {
   const onSubmit = async e => {
     e.preventDefault();
     addStory(formData);
-    props.hideModal();
-    props.getStories();
   }
   return (
     <Container fluid>
       <Row>
         <Col>
-          <Container fluid>
+          <Container className="p-3">
             <form onSubmit={onSubmit}>
               <div className="form">
-                <div className='form-group text-light'>
+                <div className='form-group'>
                   <label htmlFor='title'>Title</label>
                   <input
                     type='text'
@@ -37,7 +35,7 @@ const AddStoryForm = (props) => {
                   />
                   <div className='invalid-feedback'>Valid title is required.</div>
                 </div>
-                <div className='form-group text-light'>
+                <div className='form-group'>
                   <label htmlFor='body'>Body</label>
                   <textarea
                     type='text'
@@ -52,10 +50,13 @@ const AddStoryForm = (props) => {
                   <div className='invalid-feedback'>Body is required</div>
                 </div>
               </div>
-              <div className="p-3">
+              <div className="row p-3">
                 <input type='submit' name='btn' className='btn btn-primary' value='Add Story' />
+                <button className="btn btn-success ml-20" onClick={hideModal}>Done</button>
               </div>
+
             </form>
+
           </Container>
         </Col>
       </Row>

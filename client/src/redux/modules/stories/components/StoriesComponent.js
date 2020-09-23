@@ -46,15 +46,13 @@ const StoriesComponent = (props) => {
 
             {isAuthenticated &&
               <Fragment>
-                <Modal show={show} handleClose={hideModal}>
-                  <AddStoryForm {...props} />
-                </Modal>
-
                 <div className="p-2">
                   <button className="btn btn-primary" onClick={showModal}>Share your story</button>
                 </div>
               </Fragment>
             }
+
+            {isAuthenticated && show && <AddStoryForm {...props} />}
           </Col>
         </Row>
       </Container>

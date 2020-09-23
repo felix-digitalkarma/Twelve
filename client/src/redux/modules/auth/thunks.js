@@ -33,6 +33,7 @@ export const login = formData => async dispatch => {
     dispatch(actions.success(res.data));
     dispatch(loadUser());
     dispatch(alerts.creators.setAlert(`Welcome!`, 'success'));
+    dispatch(modal.actions.hide());
 
   } catch (err) {
     if (err && err.response) {
