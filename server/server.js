@@ -17,17 +17,20 @@ app.use('/api/users', require('./routes/User.route'));
 app.use('/api/auth', require('./routes/Auth.route'));
 app.use('/api/stories', require('./routes/Story.route'));
 
-// serve static assets in production
+app.use(express.static(path.join(__dirname, './client/dist')));
+
+//production mode
 if (process.env.NODE_ENV === 'production') {
-  // set static folder
-  // app.use(express.static('./client/dist'));
+  app.use(express.static(path.join(__dirname, './client/dist')));
   app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, './client/dist/index.html'));
-    if (err) {
-      res.status(500).send(err);
-    }
-  });
+    res.sendfile(path.join(__dirname = './client/dist/index.html'));
+  })
 }
+
+//build mode
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/client/dist/index.html'));
+})
 
 const PORT = parseInt(process.env.PORT, 10) || 5000;
 
