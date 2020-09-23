@@ -1,10 +1,15 @@
 import React from 'react'
+import { Container, Col, Row } from 'react-bootstrap';
 
 const DashboardPage = () => {
   return (
-    <div>
-      <h1>Dashboard Page</h1>
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <h1>Dashboard Page</h1>
+        </Col>
+      </Row>
+    </Container>
   )
 }
 

@@ -8,7 +8,8 @@ import LoginComponent from '../components/auth/LoginComponent';
 import SurveyContainer from '../containers/SurveyContainer';
 
 import DashboardContainer from '../containers/DashboardContainer';
-import StoriesContainer from '../redux/modules/stories/containers/StoriesContainer';
+import StoryListContainer from '../redux/modules/stories/containers/StoryListContainer';
+import StoryPageContainer from '../redux/modules/stories/containers/StoryPageContainer';
 
 import AuthRoute from '../routing/AuthRoute';
 
@@ -18,7 +19,8 @@ const Routes = () => (
     <AuthRoute type="guest" path="/register" component={RegisterContainer} />
     <AuthRoute type="guest" path="/login" component={LoginComponent} />
     <AuthRoute type="guest" path="/results" component={SurveyContainer} />
-    <AuthRoute type="guest" path="/stories" component={StoriesContainer} />
+    <AuthRoute type="guest" path="/stories" component={StoryListContainer} />
+    <AuthRoute type="guest" exact path="/stories/:id" component={StoryPageContainer} />
     <AuthRoute type="admin" path="/dashboard" component={DashboardContainer} />
   </Switch>
 );

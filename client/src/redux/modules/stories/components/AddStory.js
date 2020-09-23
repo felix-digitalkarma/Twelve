@@ -13,9 +13,11 @@ const AddStoryForm = (props) => {
   const onSubmit = async e => {
     e.preventDefault();
     addStory(formData);
+    setFormData(initialState);
+    props.getStories();
   }
   return (
-    <Container fluid>
+    <Container>
       <Row>
         <Col>
           <Container className="p-3">

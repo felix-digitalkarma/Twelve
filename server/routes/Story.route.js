@@ -35,13 +35,20 @@ storyRoute.get('/', async (req, res) => {
 
 // get api/stories/:id
 storyRoute.get('/:id', async (req, res) => {
-  const id = req.params.id;
-  storyModel.findById(id).then(data => {
-    if (!data) res.status(404).send({ msg: `Cannot find Story with id: ${id}!` });
-    else res.send(data);
-  }).catch(err => {
-    res.status(500).send({ msg: `Error updating Story with id: ${id}!` });
-  });
+  try {
+    storyModel.findById(req.params.id, (err, story) => {
+      if (err) {
+        return next(err);
+      }
+      res.json(story);
+    }).populate('user', ['firstName', 'lastInitial', 'role', 'created']);
+
+  } catch (err) {
+    if (err.kind === 'ObjectId') {
+      return res.status(404).json({ msg: 'Story not found.' });
+    }
+    res.status(500).send('Server Error');
+  }
 });
 
 // To Update The Duck Details

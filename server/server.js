@@ -16,7 +16,6 @@ app.use('/api/users', require('./routes/User.route'));
 app.use('/api/auth', require('./routes/Auth.route'));
 app.use('/api/stories', require('./routes/Story.route'));
 
-app.use(express.static(path.join(__dirname, '../client/dist')));
 
 //production mode
 if (process.env.NODE_ENV === 'production') {
@@ -27,7 +26,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 //build mode
-app.get('/*', (req, res) => {
+app.use(express.static(path.join(__dirname, '../client/dist')));
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/src/index.html'));
 })
 

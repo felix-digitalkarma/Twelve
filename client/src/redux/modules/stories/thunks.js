@@ -50,6 +50,7 @@ export const getStories = () => async dispatch => {
 
 export const getStoryById = id => async dispatch => {
   try {
+
     const res = await api.get(`/stories/${id}`);
     dispatch(actions.get(res.data));
   } catch (err) {

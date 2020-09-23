@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import StoriesComponent from '../components/StoriesComponent';
-import stories from '../';
+import StoryList from '../components/StoryList';
+import stories from '..';
 import modal from '../../modal';
 
 const mapStateToProps = state => {
@@ -20,4 +20,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(StoriesComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(StoryList);

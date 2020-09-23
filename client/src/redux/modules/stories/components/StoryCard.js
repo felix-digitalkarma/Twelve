@@ -7,7 +7,7 @@ import Moment from 'react-moment';
 const StoryCard = (story) => {
   const { _id, user, title, body, shared } = story;
   const random = Math.random();
-  const url = `https://picsum.photos/200/250?random=${random}`;
+  const url = `https://picsum.photos/200/250?random=${Math.round(random)}`;
 
   return (
     <Container>
@@ -19,7 +19,7 @@ const StoryCard = (story) => {
           <h6 className="mb-0">{title}</h6>
           <div className="mb-1 text-muted"><Moment format="ll">{shared}</Moment></div>
           <p className="card-text mb-auto">{body.substring(0, 100)}...</p>
-          <Link to={`/stories/${_id}`} className="stretched-link">More</Link>
+          <Link to={"/stories/" + _id}>Read More</Link>
         </Col>
         <div className="col-auto d-none d-lg-block">
           <img className="bd-placeholder-img bg-dark" width="200" height="250" src={url} />

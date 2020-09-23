@@ -2,28 +2,14 @@ import React, { Fragment, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import AddStoryForm from './AddStoryForm';
+import AddStory from './AddStory';
 import StoryCard from './StoryCard';
-
-const Modal = ({ handleClose, show, children }) => {
-  return (
-    <div className={show === false ? 'modal d-none' : 'modal d-block'}>
-      <div className='modal-main'>
-        <div className='closeBtn' onClick={handleClose}>
-          <i className='fa fa-times-circle'></i>
-        </div>
-        {children}
-      </div>
-      <div className='modal-bkgd bg-dark'></div>
-    </div>
-  );
-};
 
 const StoriesComponent = (props) => {
 
-  const { getStories, stories, modal, showModal, hideModal, auth } = props;
+  const { getStories, stories, modal, showModal } = props;
   const { show } = modal;
-  const { isAuthenticated } = auth;
+  const { isAuthenticated } = props.auth;
 
   useEffect(() => {
     getStories();
@@ -52,19 +38,21 @@ const StoriesComponent = (props) => {
               </Fragment>
             }
 
-            {isAuthenticated && show && <AddStoryForm {...props} />}
+            {isAuthenticated && show && <AddStory {...props} />}
           </Col>
         </Row>
       </Container>
-      <Row>
-
-        {stories &&
-          stories.map(story =>
-            <Col key={story._id} md={6}>
-              <StoryCard  {...story} />
-            </Col>
-          )}
-
+      <Row className="p-2">
+        <Container>
+          <Row>
+            {stories &&
+              stories.map(story =>
+                <Col key={story._id} md={6}>
+                  <StoryCard link={story._id} {...story} />
+                </Col>
+              )}
+          </Row>
+        </Container>
       </Row>
     </Container>
   )
