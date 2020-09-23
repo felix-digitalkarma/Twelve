@@ -25,6 +25,11 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
+//build mode
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + './client/src/index.html'));
+})
+
 const PORT = parseInt(process.env.PORT, 10) || 5000;
 
 app.listen(PORT, () => {
