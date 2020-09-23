@@ -36,18 +36,15 @@ storyRoute.get('/', async (req, res) => {
 // get api/stories/:id
 storyRoute.get('/:id', async (req, res) => {
   try {
-    storyModel.findById(req.params.id, (err, story) => {
-      if (err) {
-        return next(err);
-      }
-      res.json(story);
-    }).populate('user', ['firstName', 'lastInitial', 'role', 'created']);
-
-  } catch (err) {
-    if (err.kind === 'ObjectId') {
-      return res.status(404).json({ msg: 'Story not found.' });
+    const story = await storyModel.findOne({ _id: req.params.id }).populate('user', ['firstName', 'lastInitial', 'role', 'created']);;
+    if (!story) {
+      res.status(400).json({ msg: "Story not found." })
     }
-    res.status(500).send('Server Error');
+    res.json(story)
+  } catch (err) {
+    res.status(404).json({
+      error: err
+    });
   }
 });
 
