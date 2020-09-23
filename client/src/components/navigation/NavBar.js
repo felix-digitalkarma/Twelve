@@ -35,16 +35,11 @@ const NavBar = (props) => {
         <div className="collapse navbar-collapse" id="navbarmenu">
 
           <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <Link className="nav-link" to="/stories">User Stories</Link>
+            </li>
             {isAuthenticated ? (
               <Fragment>
-                <li className="nav-item">
-                  {user && (
-                    <span className="nav-link">Hi {user.firstName}.</span>)}
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/stories">User Stories</Link>
-                </li>
-
                 {isAuthenticated && user && user.role === 2 && (
                   <li className="nav-item">
                     <Link className="nav-link" to="/results">Survey Results</Link>
@@ -56,7 +51,10 @@ const NavBar = (props) => {
                     <Link className="nav-link" to="/dashboard">Dashboard</Link>
                   </li>
                 )}
-
+                <li className="nav-item">
+                  {user && (
+                    <span className="nav-link">Hi {user.firstName}.</span>)}
+                </li>
                 <li className="nav-item">
                   <div className="nav-link" onClick={e => handleLogout(e)}>Logout</div>
                 </li>
