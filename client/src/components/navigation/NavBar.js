@@ -68,6 +68,9 @@ const NavBar = (props) => {
                     <a className="nav-link" href="https://github.com/felix-digitalkarma/Twelve" target="_blank">Github</a>
                   </li>
                   <li className="nav-item">
+                    <a className="nav-link" href="https://paypal.me/felixmontanez?locale.x=en_US" target="_blank">Donate</a>
+                  </li>
+                  <li className="nav-item">
                     <Link className="nav-link" to="/register">Register</Link>
                   </li>
                   <li className="nav-item">
