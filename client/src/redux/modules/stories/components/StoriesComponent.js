@@ -1,13 +1,13 @@
 import React, { Fragment, useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap';
-import Moment from 'react-moment';
+// import Moment from 'react-moment';
 
-import AddStoryForm from './AddStoryForm';
+// import AddStoryForm from './AddStoryForm';
 import StoryCard from './StoryCard';
 
 const StoriesComponent = (props) => {
 
-  const { getStories, stories, loading } = props;
+  const { getStories, stories } = props;
 
   useEffect(() => {
     getStories();
@@ -20,7 +20,7 @@ const StoriesComponent = (props) => {
         {stories &&
           stories.map(story =>
             <Col md={6}>
-              <StoryCard key={story._id} {...story} />
+              <StoryCard key={story.title} {...story} />
             </Col>
           )}
       </Row>

@@ -4,7 +4,9 @@ import Moment from 'react-moment';
 
 const StoryCard = (story) => {
   const { _id, user, title, body, shared } = story;
-  const imgUrl = 'http://lorempixel.com/200/250/nature/';
+  const random = Math.random();
+  const url = `https://picsum.photos/200/250?random=${random}`;
+
   return (
     <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
       <div className="col p-4 d-flex flex-column position-static">
@@ -15,7 +17,7 @@ const StoryCard = (story) => {
         <Link to={`/stories/${_id}`} className="stretched-link">More</Link>
       </div>
       <div className="col-auto d-none d-lg-block">
-        <img className="bd-placeholder-img" width="200" height="250" src={imgUrl} />
+        <img className="bd-placeholder-img" width="200" height="250" src={url} />
       </div>
     </div>
   )
