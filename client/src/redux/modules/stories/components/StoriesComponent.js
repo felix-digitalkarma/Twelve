@@ -3,10 +3,11 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Moment from 'react-moment';
 
 import AddStoryForm from './AddStoryForm';
+import StoryCard from './StoryCard';
 
 const StoriesComponent = (props) => {
 
-  const { getStories, stories, } = props;
+  const { getStories, stories, loading } = props;
 
   useEffect(() => {
     getStories();
@@ -14,27 +15,14 @@ const StoriesComponent = (props) => {
 
   return (
     <Container>
+      <h3>User Stories</h3>
       <Row>
-        <Col md={5}>
-          <h1>Stories Component</h1>
-          <p>There are currently {stories.length || 0} stories.</p>
-          <AddStoryForm {...props} />
-
-
-        </Col>
-        <Col md={7}>
-          {stories &&
-            stories.map(story => (
-              <Fragment key={story._id}>
-                <h3>{story.title}</h3>
-                <p>{story.body}</p>
-                {story.user && <p>By: {story.user.firstName} {story.user.lastInitial}</p>}
-                <p>Shared <Moment format="LLL">{story.shared}</Moment></p>
-                <hr className="featurette-divider" />
-              </Fragment>
-            ))}
-
-        </Col>
+        {stories &&
+          stories.map(story =>
+            <Col md={6}>
+              <StoryCard key={story._id} {...story} />
+            </Col>
+          )}
       </Row>
     </Container>
   )
