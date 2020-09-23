@@ -20,7 +20,7 @@ app.use('/api/stories', require('./routes/Story.route'));
 // serve static assets in production
 if (process.env.NODE_ENV === 'production') {
   // set static folder
-  app.use(express.static('./client/dist'));
+  // app.use(express.static('./client/dist'));
   app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, './client/dist/index.html'));
     if (err) {
