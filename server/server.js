@@ -19,18 +19,26 @@ app.use('/api/stories', require('./routes/Story.route'));
 
 // build mode
 if (process.env.NODE_ENV === 'development') {
-  app.use(express.static('../frontend/public'));
+
+  app.use(express.static(__dirname + '/frontend/public'));
+
   app.get('*', (req, res) => {
+
     res.sendFile('index.html');
   })
+
 }
 
 // production mode
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('../frontend/build'));
+
+  app.use(express.static(__dirname + '/frontend/build'));
+
   app.get('*', (req, res) => {
+
     res.sendFile('index.html');
   })
+
 }
 
 const PORT = parseInt(process.env.PORT, 10) || 5000;
