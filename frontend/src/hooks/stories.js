@@ -1,33 +1,28 @@
-import React, { useContext, useEffect } from 'react'
-import styled from 'styled-components';
-import { StoryContext } from '../contexts/StoryContextProvider';
-
-const Wrapper = styled.div`
-padding: 20px;
-`;
+import React, { useState, useEffect } from 'react'
 
 export const Stories = () => {
-
-  const { stories, fetchStories } = useContext(StoryContext);
-
-
+  const [stories, setStories] = useState([])
   useEffect(() => {
-    fetchStories();
-  }, [fetchStories]);
+    (async () => {
+      const result = await fetch('/api/stories')
+      const data = await result.json()
+      setStories(data)
+    })()
+  }, [])
 
   return (
-    <Wrapper>
-      <h2>Stories</h2>
-      <ul>
-        {stories && stories.map(story => (
-          <li key={story._id}>
-            <h3>{story.title}</h3>
-            <p>{story.body}</p>
-          </li>
-        ))}
-      </ul>
-    </Wrapper>
-  );
+    <div>
+      {stories.map(story => {
+        const { title, body, _id } = story
+        return (
+          <div key={_id}>
+            <p style={{ fontWeight: 'bold' }}>{title}</p>
+            <p> {body}</p>
+          </div>
+        )
+      })}
+    </div>
+  )
 }
 
-export default Stories;
+export default Stories
