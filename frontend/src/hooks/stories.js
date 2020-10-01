@@ -1,19 +1,31 @@
-import React from 'react'
-import { Link } from '@reach/router';
+import React, { useContext, useEffect } from 'react'
+import styled from 'styled-components';
+import { StoryContext } from '../contexts/StoryContextProvider';
 
-const Stories = () => {
+const Wrapper = styled.div`
+padding: 20px;
+`;
+
+export const Stories = () => {
+
+  const { stories, fetchStories } = useContext(StoryContext);
+
+  useEffect(() => {
+    fetchStories();
+  }, [fetchStories]);
+
   return (
-    <div>
+    <Wrapper>
       <h2>Stories</h2>
       <ul>
-        <li>
-          <Link to="/stories/123">John's Story</Link>
-        </li>
-        <li>
-          <Link to="/stories/abc">Bill's Story</Link>
-        </li>
+        {stories.map(story => (
+          <li key={story._id}>
+            <h3>{story.title}</h3>
+            <p>{story.body}</p>
+          </li>
+        ))}
       </ul>
-    </div>
+    </Wrapper>
   );
 }
 

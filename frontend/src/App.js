@@ -7,6 +7,7 @@ import GlobalContextProvider from './contexts/GlobalContextProvider';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Routes from './routes';
+import StoryContextProvider from './contexts/StoryContextProvider';
 
 const App = () => {
   return (
@@ -14,7 +15,9 @@ const App = () => {
       <AuthContextProvider>
         <Navbar />
         <GlobalContextProvider>
-          <Routes />
+          <StoryContextProvider>
+            <Routes />
+          </StoryContextProvider>
         </GlobalContextProvider>
       </AuthContextProvider>
       <Footer />
