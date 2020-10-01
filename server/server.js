@@ -19,20 +19,19 @@ app.use('/api/stories', require('./routes/Story.route'));
 
 // build mode
 if (process.env.NODE_ENV === 'development') {
-  const staticDirectory = __dirname + '../frontend/public';
+  const staticDirectory = path.join(__dirname, '../frontend/public');
   app.use(express.static(staticDirectory));
   app.get('*', (req, res) => {
-    // path must be absolute or specify root to res.sendFile
     res.sendFile('index.html', { root: staticDirectory });
   })
 }
 
 // production mode
 if (process.env.NODE_ENV === 'production') {
-  const staticDirectory = __dirname + '../frontend/build';
+  // _dirname + '/app/frontend/build/index.html'
+  const staticDirectory = path.join(__dirname, '../frontend/build');
   app.use(express.static(staticDirectory));
   app.get('*', (req, res) => {
-    // path must be absolute or specify root to res.sendFile
     res.sendFile('index.html', { root: staticDirectory });
   })
 }
