@@ -1,34 +1,34 @@
-import React, { Component, createContext } from 'react';
+import React, { createContext, useReducer, useEffect } from 'react';
+import StoryReducer from '../store/reducers/story_reducer';
 import api from '../utils/api';
+
+// actions
+import * as ACTION_TYPES from '../store/actions/actions';
 
 export const StoryContext = createContext();
 
-class StoryContextProvider extends Component {
-  state = {
-    stories: []
-  }
+const StoryContextProvider = (props) => {
 
-  addStory = () => {
-    // post data to server
-    console.log('add story');
-  }
+  const [stories, dispatch] = useReducer(StoryReducer, [], () => {
+    const storyData = localStorage.getItem("stories");
+    return storyData ? JSON.parse(storyData) : [];
+  })
 
-  fetchStories = async () => {
+  const fetchStories = async () => {
     const res = await api.get('/stories');
-    this.setState({ ...this.state.stories, stories: res.data })
+    dispatch({ type: ACTION_TYPES.SUCCESS, stories: res.data });
   }
 
-  render() {
-    return (
-      <StoryContext.Provider value={{
-        ...this.state,
-        fetchStories: this.fetchStories,
-        addStory: this.addStory
-      }}>
-        {this.props.children}
-      </StoryContext.Provider>
-    );
-  }
+  useEffect(() => {
+    localStorage.setItem('stories', JSON.stringify(stories));
+  }, [stories])
+
+  return (
+    <StoryContext.Provider value={{ stories, dispatch, fetchStories }}>
+      {props.children}
+    </StoryContext.Provider>
+  );
+
 }
 
 export default StoryContextProvider;

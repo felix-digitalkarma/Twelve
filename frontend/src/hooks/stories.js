@@ -10,6 +10,7 @@ export const Stories = () => {
 
   const { stories, fetchStories } = useContext(StoryContext);
 
+
   useEffect(() => {
     fetchStories();
   }, [fetchStories]);
@@ -18,7 +19,7 @@ export const Stories = () => {
     <Wrapper>
       <h2>Stories</h2>
       <ul>
-        {stories.map(story => (
+        {stories && stories.map(story => (
           <li key={story._id}>
             <h3>{story.title}</h3>
             <p>{story.body}</p>
