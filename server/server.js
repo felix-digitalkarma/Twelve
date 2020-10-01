@@ -17,21 +17,22 @@ app.use(bodyParser.json());
 app.use('/api/stories', require('./routes/Story.route'));
 
 
-// production mode
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'build')));
-  app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+// build mode
+if (process.env.NODE_ENV === 'development') {
+  app.use(express.static('../frontend/public'));
+  app.get('*', (req, res) => {
+    res.sendFile('index.html');
   })
 }
 
-// build mode
+// production mode
 if (process.env.NODE_ENV === 'development') {
-  app.use(express.static(path.join(__dirname, 'public')));
+  app.use(express.static('../frontend/build'));
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile('index.html');
   })
 }
+
 
 const PORT = parseInt(process.env.PORT, 10) || 5000;
 
