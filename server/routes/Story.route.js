@@ -2,10 +2,10 @@ const express = require('express');
 const storyRoute = express.Router();
 
 const auth = require('../middleware/auth');
-// const userModel = require('../models/User');
+
 const storyModel = require('../models/Story');
 
-// post api/stories
+
 storyRoute.post('/', auth, async (req, res) => {
   try {
     const { title, body } = req.body;
@@ -25,7 +25,9 @@ storyRoute.post('/', auth, async (req, res) => {
 // get api/stories
 storyRoute.get('/', async (req, res) => {
   try {
-    const stories = await storyModel.find().populate('user', ['firstName', 'lastInitial', 'role', 'created']);
+    // const stories = await storyModel.find().populate('user', ['firstName', 'lastInitial', 'role', 'created']);
+    const stories = await storyModel.find();
+
     res.json(stories);
   } catch (err) {
     console.log(err);
@@ -48,7 +50,7 @@ storyRoute.get('/:id', async (req, res) => {
   }
 });
 
-// To Update The Duck Details
+
 storyRoute.put('/:id', auth, async (req, res, next) => {
   const id = req.params.id;
   storyModel.findByIdAndUpdate(id, req.body, { useFindAndModify: false }).then(data => {
@@ -65,7 +67,7 @@ storyRoute.put('/:id', auth, async (req, res, next) => {
   });
 });
 
-// delete api/stories/:id
+
 storyRoute.delete('/:id', auth, async (req, res) => {
   const id = req.params.id;
   storyModel.findByIdAndRemove(id)

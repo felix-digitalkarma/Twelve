@@ -12,23 +12,23 @@ connectDB();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use('/api/users', require('./routes/User.route'));
-app.use('/api/auth', require('./routes/Auth.route'));
+// app.use('/api/users', require('./routes/User.route'));
+// app.use('/api/auth', require('./routes/Auth.route'));
 app.use('/api/stories', require('./routes/Story.route'));
 
 
-//production mode
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/dist')));
-  app.get('/*', (req, res) => {
-    res.sendfile(path.join(__dirname, '../client/dist/index.html'));
-  })
-}
+// //production mode
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static(path.join(__dirname, '../client/dist')));
+//   app.get('/*', (req, res) => {
+//     res.sendfile(path.join(__dirname, '../client/dist/index.html'));
+//   })
+// }
 
-//build mode
-app.use(express.static(path.join(__dirname, '../client/dist')));
+// //build mode
+app.use(express.static(path.join(__dirname, '../client/public')));
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/src/index.html'));
+  res.sendFile(path.join(__dirname, '../client/public/index.html'));
 })
 
 const PORT = parseInt(process.env.PORT, 10) || 5000;

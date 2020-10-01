@@ -8,7 +8,7 @@ const authRoute = express.Router();
 
 // @route       GET api/auth
 // @description Get Current User
-// @access      Publi;c
+// @access      Public
 authRoute.get('/', auth, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).populate('user', ['firstName', 'lastInitial', 'email', 'role']).select('-password');
