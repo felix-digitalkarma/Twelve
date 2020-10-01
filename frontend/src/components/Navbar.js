@@ -47,7 +47,7 @@ export const Navbar = () => {
           <NavLink theme={theme} href="/login">Login</NavLink>
         </Fragment>
       }
-      <NavButton onClick={toggleTheme}>Toggle Theme</NavButton>
+      <NavButton onClick={toggleTheme}>Toggle Home</NavButton>
     </ThemedNavbar >
   );
 

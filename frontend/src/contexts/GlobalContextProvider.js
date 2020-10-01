@@ -1,29 +1,22 @@
-import React, { useReducer, createContext } from 'react';
+import React, { createContext } from 'react';
 
-/* ACTIONS/REDUCERS */
-import * as ACTIONS from '../store/actions/actions';
-import * as PlainReducer from '../store/reducers/plain_reducer';
+import api from '../utils/api';
+import useLocalStorage from '../utils/useLocalStorage';
 
 export const GlobalContext = createContext();
 
 const GlobalContextProvider = (props) => {
 
-  const [statePlain, dispatchPlain] = useReducer(PlainReducer.PlainReducer, PlainReducer.initialState);
+  const [stories, setStories] = useLocalStorage('stories', []);
 
-  const dispatchContextTrue = () => {
-    dispatchPlain(ACTIONS.SUCCESS);
-  }
-
-  const dispatchContextFalse = () => {
-    dispatchPlain(ACTIONS.FAILURE);
+  const fetchStories = async () => {
+    const res = await api.get('/stories');
+    setStories({ stories: res.data });
   }
 
   return (
     <GlobalContext.Provider value={{
-      stateProp1: statePlain.stateprop1,
-      stateProp2: statePlain.stateprop2,
-      dispatchContextFalse,
-      dispatchContextTrue
+      stories, fetchStories
     }}>
       {props.children}
     </GlobalContext.Provider>
