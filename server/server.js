@@ -24,7 +24,10 @@ if (process.env.NODE_ENV === 'development') {
 
   app.get('*', (req, res) => {
 
-    res.sendFile('index.html');
+
+
+    res.sendFile('index.html', { root: __dirname });
+
   })
 
 }
@@ -35,8 +38,10 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(__dirname + '/frontend/build'));
 
   app.get('*', (req, res) => {
+    //path must be absolute or specify root to res.sendFile
+    // NO - res.sendFile('index.html');
+    res.sendFile('index.html', { root: __dirname });
 
-    res.sendFile('index.html');
   })
 
 }
