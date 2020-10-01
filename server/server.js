@@ -1,23 +1,26 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
+const cors = require('cors');
+
 const express = require('express'),
   path = require('path'),
   bodyParser = require('body-parser'),
   connectDB = require('../config/db');
+
 
 const app = express();
 connectDB();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-// app.use('/api/users', require('./routes/User.route'));
-// app.use('/api/auth', require('./routes/Auth.route'));
-app.use('/api/stories', require('./routes/Story.route'));
+app.use(cors());
 
 
-// build mode
+// api
+const stories = require('./api/stories');
+app.use('/api/stories', stories);
+
 if (process.env.NODE_ENV === 'development') {
   const staticDirectory = path.join(__dirname, '../frontend/public');
   app.use(express.static(staticDirectory));
@@ -26,7 +29,7 @@ if (process.env.NODE_ENV === 'development') {
   })
 }
 
-// production mode
+
 if (process.env.NODE_ENV === 'production') {
   // _dirname + '/app/frontend/build/index.html'
   const staticDirectory = path.join(__dirname, '../frontend/build');
