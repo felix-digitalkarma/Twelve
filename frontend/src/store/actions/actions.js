@@ -16,6 +16,7 @@ export const LOGIN_FAILURE = {
   type: ACTION_TYPES.LOGIN_FAILURE
 }
 
+
 export const ADD_STORY = {
   type: ACTION_TYPES.ADD_STORY
 }
@@ -23,3 +24,8 @@ export const ADD_STORY = {
 export const REMOVE_STORY = {
   type: ACTION_TYPES.REMOVE_STORY
 }
+
+export const ALL_STORIES = stories => ({
+  type: ACTION_TYPES.ALL_STORIES,
+  payload: stories,
+});

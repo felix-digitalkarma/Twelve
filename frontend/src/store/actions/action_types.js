@@ -10,3 +10,4 @@ export const REGISTER_FAILURE = 'REGISTER_FAILURE'
 
 export const ADD_STORY = "ADD_STORY"
 export const REMOVE_STORY = "REMOVE_STORY"
+export const ALL_STORIES = "ALL_STORIES"

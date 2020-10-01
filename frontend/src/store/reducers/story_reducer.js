@@ -5,7 +5,10 @@ export const initialState = {
 }
 
 export const StoryReducer = (state = initialState, action) => {
-  switch (action.type) {
+  const { type } = action;
+  switch (type) {
+
+    case ACTION_TYPES.SUCCESS:
     case ACTION_TYPES.ADD_STORY:
       return {
         ...state,
@@ -13,6 +16,8 @@ export const StoryReducer = (state = initialState, action) => {
       }
 
     default:
-      throw new Error();
+      return state;
   }
 }
+
+export default StoryReducer;
