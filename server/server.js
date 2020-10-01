@@ -19,17 +19,19 @@ app.use('/api/stories', require('./routes/Story.route'));
 
 // //production mode
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
-  app.get('/*', (req, res) => {
-    res.sendfile(path.join(__dirname, '../client/build/index.html'));
+  app.use(express.static(path.join(__dirname, 'build')));
+  app.post('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
   })
 }
 
 // //build mode
-app.use(express.static(path.join(__dirname, '../client/public')));
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/public/index.html'));
-})
+if (process.env.NODE_ENV === 'development') {
+  app.use(express.static(path.join(__dirname, 'public')));
+  app.post('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  })
+}
 
 const PORT = parseInt(process.env.PORT, 10) || 5000;
 
