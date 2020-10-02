@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+
 import { useAuthStore } from '../contexts/auth';
 
 const Wrapper = styled.div`
@@ -19,8 +20,6 @@ export const Login = () => {
   } = formData;
 
   const [state, actions] = useAuthStore();
-  const { data } = state;
-  console.log('data from state: ', data);
 
   const onChange = e => setFormData({
     ...formData,
@@ -29,12 +28,12 @@ export const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    actions.authUser(formData);
+    actions.login(formData);
   }
   return (
     <Wrapper>
       <h1>Login Form</h1>
-
+      <p>Currently Authenticated: {`${state.isAuthenticated}`}</p>
       <form onSubmit={(e) => handleSubmit(e)}>
         <input
           type='text'

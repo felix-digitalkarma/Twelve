@@ -1,5 +1,6 @@
-import React, { useContext } from 'react';
+import React, { Fragment, useContext } from 'react';
 import styled from 'styled-components';
+import { useAuthStore } from '../contexts/auth';
 
 import { ThemeContext } from '../contexts/theme';
 
@@ -34,17 +35,26 @@ justify-content: flex-end;
 
 export const Navbar = () => {
 
+  const [state, actions] = useAuthStore();
+
   const { isLightTheme, light, dark } = useContext(ThemeContext);
   const theme = isLightTheme ? light : dark;
+  console.log('actions available: ', actions);
 
   return (
     <ThemedNavbar theme={theme}>
       <NavLink href="/" theme={theme}>Twelve.Community</NavLink>
       <NavLink href="/stories" theme={theme}>Stories</NavLink>
       <NavLink href="/meetings" theme={theme}>Meetings</NavLink>
+      {state && state.isAuthenticated ? (
+        <NavLink href="/logout" theme={theme}>Log Out</NavLink>
+      ) : (
+          <Fragment>
+            <UserNavLink href="/register" theme={theme}>Register</UserNavLink>
+            <UserNavLink href="/login" theme={theme}>Login</UserNavLink>
+          </Fragment >
+        )}
 
-      <UserNavLink href="/register" theme={theme}>Register</UserNavLink>
-      <UserNavLink href="/login" theme={theme}>Login</UserNavLink>
     </ThemedNavbar >
   );
 
