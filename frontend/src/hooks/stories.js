@@ -1,27 +1,26 @@
-import React, { useState, useEffect } from 'react'
+import React, { Fragment, useEffect } from 'react'
+import { useStories } from '../contexts/stories';
 
 export const Stories = () => {
-  const [stories, setStories] = useState([])
+  const [state, actions] = useStories();
+  const { data } = state;
+
   useEffect(() => {
-    (async () => {
-      const result = await fetch('/api/stories')
-      const data = await result.json()
-      setStories(data)
-    })()
-  }, [])
+    if (!state.data) actions.fetch()
+  }, [actions, state.data]);
 
   return (
-    <div>
-      {stories.map(story => {
-        const { title, body, _id } = story
-        return (
-          <div key={_id}>
-            <p style={{ fontWeight: 'bold' }}>{title}</p>
-            <p> {body}</p>
-          </div>
-        )
-      })}
-    </div>
+    <Fragment>
+      <h1>Stories</h1>
+      <ul>
+        {data && data.map(story => (
+          <li key={story._id}>
+            <p>{story.title}</p>
+            <p>{story.body}</p>
+          </li>
+        ))}
+      </ul>
+    </Fragment>
   )
 }
 
