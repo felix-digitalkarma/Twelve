@@ -44,4 +44,12 @@ export const intitialState = {
   }
 };
 
+// define actions to mutate
+// toggleTheme: !isLightTheme
+
+
+// create Store 
+
+// useHook or Subscriber/Consumer approach
+
 export const ThemeContext = React.createContext(intitialState);

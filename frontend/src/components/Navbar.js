@@ -2,8 +2,6 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 
 import { ThemeContext } from '../contexts/theme';
-import { useAuth } from '../contexts/auth';
-
 
 const ThemedNavbar = styled.nav`
   height: 70px;
@@ -26,9 +24,6 @@ const NavLink = styled.a`
 
 export const Navbar = () => {
 
-  const [state] = useAuth();
-  const { isAuthenticated } = state;
-
   const { isLightTheme, light, dark } = useContext(ThemeContext);
   const theme = isLightTheme ? light : dark;
 
@@ -38,7 +33,7 @@ export const Navbar = () => {
       <NavLink href="/stories" theme={theme}>Stories</NavLink>
       <NavLink href="/meetings" theme={theme}>Meetings</NavLink>
       <NavLink href="/register" theme={theme}>Register</NavLink>
-      <NavLink href="/login" theme={theme}>Login {`isAuthenticated: ${isAuthenticated}`}</NavLink>
+      <NavLink href="/login" theme={theme}>Login</NavLink>
     </ThemedNavbar >
   );
 

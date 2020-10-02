@@ -24,7 +24,7 @@ const actions = {
 
 export const AuthStore = createStore({ initialState, actions });
 
-export const useAuth = createHook(AuthStore);
+export const useAuthStore = createHook(AuthStore);
 export const AuthSubscriber = createSubscriber(AuthStore);
 export const AuthContainer = createContainer(AuthStore);
 
