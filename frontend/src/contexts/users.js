@@ -14,18 +14,17 @@ const actions = {
     if (getState().loading) return;
     setState({ loading: true });
     try {
-      const auth = await api.get('/auth');
+      const auth = await api.get('/users');
       setState({ data: auth.data, loading: false })
     } catch (error) {
       setState({ error, loading: false })
     }
   },
-  authUser: (user) => async ({ setState, getState }) => {
+  create: (user) => async ({ setState, getState }) => {
     if (getState().loading) return;
     setState({ loading: true });
     try {
-      const res = await api.post('/auth', user);
-      console.log(res);
+      const res = await api.post('/users', user);
       setState({ data: res.data, loading: false })
     } catch (error) {
       setState({ error, loading: false })
@@ -33,9 +32,9 @@ const actions = {
   },
 };
 
-export const AuthStore = createStore({ initialState, actions });
+export const UserStore = createStore({ initialState, actions });
 
-export const useAuthStore = createHook(AuthStore);
-export const AuthSubscriber = createSubscriber(AuthStore);
-export const AuthContainer = createContainer(AuthStore);
+export const useUserStore = createHook(UserStore);
+export const AuthSubscriber = createSubscriber(UserStore);
+export const AuthContainer = createContainer(UserStore);
 
