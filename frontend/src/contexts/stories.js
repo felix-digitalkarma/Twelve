@@ -1,11 +1,11 @@
-import { createStore, createHook } from 'react-sweet-state';
-import api from '../utils/api';
+import { createStore, createHook } from "react-sweet-state";
+import api from "../utils/api";
 
 // define initialState
 export const initialState = {
   data: null,
   loading: false,
-  error: null
+  error: null,
 };
 
 // define actions that mutate state
@@ -14,23 +14,20 @@ export const actions = {
     if (getState().loading) return;
     setState({ loading: true });
     try {
-      const stories = await api.get('/stories');
-      setState({ data: stories.data, loading: false })
+      const stories = await api.get("/stories");
+      setState({ data: stories.data, loading: false });
     } catch (error) {
-      setState({ error, loading: false })
+      setState({ error, loading: false });
     }
-  }
+  },
 };
 
-
-// create Store with initial state, 
+// create Store with initial state,
 // actions, with optional name for debug
 export const Store = createStore({
   initialState,
   actions,
-  name: 'stories'
+  name: "stories",
 });
 
 export const useStories = createHook(Store);
-
-

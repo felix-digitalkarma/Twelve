@@ -15,6 +15,7 @@ const actions = {
     if (getState().loading) return;
     setState({ loading: true });
     try {
+      /*  */
       const auth = await api.get('/auth');
       setState({ data: auth.data, loading: false })
     } catch (error) {
@@ -51,4 +52,3 @@ export const AuthStore = createStore({ initialState, actions });
 export const useAuthStore = createHook(AuthStore);
 export const AuthSubscriber = createSubscriber(AuthStore);
 export const AuthContainer = createContainer(AuthStore);
-

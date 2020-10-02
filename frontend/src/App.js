@@ -1,7 +1,6 @@
 import React from 'react';
 import { Router } from '@reach/router';
 
-
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -15,6 +14,8 @@ import { AuthContainer } from './contexts/auth';
 const App = () => {
 
   return (
+
+
     <AuthContainer isGlobal>
       <Navbar />
       <Router>

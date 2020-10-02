@@ -23,7 +23,6 @@ const NavLink = styled.a`
   color: #FFF;
 `;
 
-
 const Footer = () => {
   return (
     <StyledFooter>
