@@ -1,24 +1,26 @@
 import React from 'react';
+import { Router } from '@reach/router';
 
-import AuthContextProvider from './contexts/AuthContextProvider';
-import ThemeContextProvider from './contexts/ThemeContextProvider';
-import GlobalContextProvider from './contexts/GlobalContextProvider';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Routes from './routes';
+
+import Home from './hooks/home';
+import Stories from './hooks/stories';
 
 const App = () => {
+
   return (
-    <GlobalContextProvider>
-      <ThemeContextProvider>
-        <AuthContextProvider>
-          <Navbar />
-          <Routes />
-        </AuthContextProvider>
-        <Footer />
-      </ThemeContextProvider>
-    </GlobalContextProvider>
+    <div>
+      <Navbar />
+      <Router>
+        <Home path="/" />
+        <Stories path="stories" />
+
+      </Router>
+      <Footer />
+    </div>
+
   );
 }
 

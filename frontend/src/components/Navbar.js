@@ -1,8 +1,7 @@
-import React, { Fragment, useContext } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { ThemeContext } from '../contexts/theme';
 
-import { ThemeContext } from '../contexts/ThemeContextProvider';
-import { AuthContext } from '../contexts/AuthContextProvider';
 
 const ThemedNavbar = styled.nav`
   height: 70px;
@@ -11,6 +10,7 @@ const ThemedNavbar = styled.nav`
   justify-content: flex-start;
   align-items: center;
   background: ${({ theme }) => theme.color.primary};
+  color: ${({ theme }) => theme.color.secondary};
 `;
 
 const NavLink = styled.a`
@@ -22,32 +22,15 @@ const NavLink = styled.a`
   }
 `;
 
-const NavButton = styled.button`
-  display: flex;
-  position: absolute;
-  right: 10px;
-  padding: 10px;
-`;
-
-
 export const Navbar = () => {
-  const { isAuthenticated } = useContext(AuthContext);
-  const { isLightTheme, light, dark, toggleTheme } = useContext(ThemeContext);
+  const { isLightTheme, light, dark } = useContext(ThemeContext);
   const theme = isLightTheme ? light : dark;
 
   return (
     <ThemedNavbar theme={theme}>
-      <NavLink theme={theme} href="/">Twelve.Community</NavLink>
-      <NavLink theme={theme} href="/stories">Stories</NavLink>
-
-      { isAuthenticated ? <NavLink theme={theme} href="/">Log Out</NavLink>
-        :
-        <Fragment>
-          <NavLink theme={theme} href="/register">Register</NavLink>
-          <NavLink theme={theme} href="/login">Login</NavLink>
-        </Fragment>
-      }
-      <NavButton onClick={toggleTheme}>Toggle Home</NavButton>
+      <NavLink href="/" theme={theme}>Twelve.Community</NavLink>
+      <NavLink href="/stories" theme={theme}>Stories</NavLink>
+      <NavLink href="/meetings" theme={theme}>Meetings</NavLink>
     </ThemedNavbar >
   );
 
