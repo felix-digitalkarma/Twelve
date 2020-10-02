@@ -11,7 +11,7 @@ const userModel = require('../models/User');
 // @desc     Create user
 // @access   Public
 userRoute.post('/', async (req, res) => {
-  const { firstName, lastInitial, email, phone, password, role } = req.body;
+  const { firstName, lastInitial, email, password } = req.body;
 
   try {
     let user = await userModel.findOne({ email });
@@ -24,9 +24,7 @@ userRoute.post('/', async (req, res) => {
       firstName,
       lastInitial,
       email,
-      phone,
       password,
-      role
     });
 
     const salt = await bcrypt.genSalt(10);
