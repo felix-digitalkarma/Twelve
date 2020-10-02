@@ -1,12 +1,14 @@
 import { createStore, createHook } from 'react-sweet-state';
 import api from '../utils/api';
 
+// define initialState
 export const initialState = {
   data: null,
   loading: false,
   error: null
 };
 
+// define actions that mutate state
 export const actions = {
   fetch: () => async ({ setState, getState }) => {
     if (getState().loading) return;
@@ -20,6 +22,9 @@ export const actions = {
   }
 };
 
+
+// create Store with initial state, 
+// actions, with optional name for debug
 export const Store = createStore({
   initialState,
   actions,

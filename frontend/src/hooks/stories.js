@@ -1,6 +1,8 @@
 import React, { Fragment, useEffect } from 'react'
 import { useStories } from '../contexts/stories';
 
+import Card from '../components/Card';
+
 export const Stories = () => {
   const [state, actions] = useStories();
   const { data } = state;
@@ -11,15 +13,7 @@ export const Stories = () => {
 
   return (
     <Fragment>
-      <h1>Stories</h1>
-      <ul>
-        {data && data.map(story => (
-          <li key={story._id}>
-            <p>{story.title}</p>
-            <p>{story.body}</p>
-          </li>
-        ))}
-      </ul>
+      {data && data.map(story => <Card key={story._id} {...story} />)}
     </Fragment>
   )
 }

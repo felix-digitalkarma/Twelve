@@ -19,7 +19,12 @@ app.use(cors());
 
 // api
 const stories = require('./api/stories');
+const users = require('./api/users');
+const auth = require('./api/auth');
+
 app.use('/api/stories', stories);
+app.use('/api/users', users);
+app.use('/api/auth', auth);
 
 if (process.env.NODE_ENV === 'development') {
   const staticDirectory = path.join(__dirname, '../frontend/public');

@@ -4,6 +4,7 @@ const config = require('config');
 const bcrypt = require('bcryptjs');
 const auth = require('../middleware/auth');
 const User = require('../models/User');
+
 const authRoute = express.Router();
 
 // @route       GET api/auth
@@ -60,7 +61,6 @@ authRoute.post('/', async (req, res) => {
     );
   } catch (err) {
     console.error(err.message);
-
     res.status(500).send('Server error');
   }
 });

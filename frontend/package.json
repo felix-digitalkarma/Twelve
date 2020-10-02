@@ -16,6 +16,7 @@
     "history": "^5.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-moment": "^1.0.0",
     "react-scripts": "3.4.3",
     "react-slick": "^0.27.11",
     "react-sweet-state": "^2.3.1",
