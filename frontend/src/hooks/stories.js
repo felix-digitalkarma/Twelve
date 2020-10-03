@@ -11,7 +11,10 @@ export const Stories = () => {
 
   return (
     <Fragment>
-      {data && data.map((story) => <Card key={story._id} {...story} />)}
+      {data &&
+        data.map((story) => (
+          <Card key={story._id} {...story} user={story.user} />
+        ))}
     </Fragment>
   );
 };
