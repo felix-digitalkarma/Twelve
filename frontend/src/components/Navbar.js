@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from "react";
 import styled from "styled-components";
-import { useAuthStore } from "../contexts/auth";
 
+import { useAuthStore } from "../contexts/auth";
 import { ThemeContext } from "../contexts/theme";
 
 const ThemedNavbar = styled.nav`
@@ -44,9 +44,6 @@ export const Navbar = () => {
       </NavLink>
       <NavLink href="/stories" theme={theme}>
         Stories
-      </NavLink>
-      <NavLink href="/meetings" theme={theme}>
-        Meetings
       </NavLink>
       {state && state.isAuthenticated ? (
         <NavLink href="/" onClick={actions.logout} theme={theme}>

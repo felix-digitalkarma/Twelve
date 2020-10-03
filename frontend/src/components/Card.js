@@ -16,13 +16,9 @@ const Card = (props) => {
   return (
     <CardWrapper>
       <StyledHeader3>{props.title}</StyledHeader3>
-      <p>
-        {props.user.firstName} {props.user.lastInitial}
-      </p>
+      {props.user.firstName} {props.user.lastInitial} -{" "}
+      <Moment format="l">{props.created}</Moment>
       <p>{props.body}</p>
-      <p>
-        <Moment format="LLL">{props.created}</Moment>
-      </p>
     </CardWrapper>
   );
 };
