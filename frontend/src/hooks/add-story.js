@@ -12,7 +12,6 @@ export const AddStory = () => {
     body: "",
   });
   const { title, body } = formData;
-  const [{ loading }, { add }] = useStories();
 
   const handleChange = (evt) => {
     setFormData({
@@ -28,7 +27,6 @@ export const AddStory = () => {
 
   return (
     <Fragment>
-      <p>{loading ? "" : ""}</p>
       <h1>Share Your Story</h1>
       <form onSubmit={handleSubmit}>
         <input
