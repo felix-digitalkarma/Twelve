@@ -7,6 +7,7 @@ import { useStories } from "../contexts/stories";
 // in order to access action
 
 export const AddStory = () => {
+  const [state, { addStory }] = useStories();
   const [formData, setFormData] = useState({
     title: "",
     body: "",
@@ -22,7 +23,7 @@ export const AddStory = () => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    add(formData);
+    addStory(formData);
   };
 
   return (
@@ -46,6 +47,7 @@ export const AddStory = () => {
           onChange={(e) => handleChange(e)}
         />
         <input type="submit" value="Add Story" />
+        <p>{state && state.error}</p>
       </form>
     </Fragment>
   );
