@@ -1,21 +1,19 @@
-import React, { Fragment, useEffect } from 'react'
-import { useStories } from '../contexts/stories';
-
-import Card from '../components/Card';
+import React, { Fragment, useEffect } from "react";
+import { useStories } from "../contexts/stories";
+import Card from "../components/Card";
 
 export const Stories = () => {
-  const [state, actions] = useStories();
-  const { data } = state;
+  const [{ data }, { fetch }] = useStories();
 
   useEffect(() => {
-    if (!state.data) actions.fetch()
-  }, [actions, state.data]);
+    if (!data) fetch();
+  }, [fetch, data]);
 
   return (
     <Fragment>
-      {data && data.map(story => <Card key={story._id} {...story} />)}
+      {data && data.map((story) => <Card key={story._id} {...story} />)}
     </Fragment>
-  )
-}
+  );
+};
 
-export default Stories
+export default Stories;

@@ -1,44 +1,37 @@
-const express = require('express');
-const jwt = require('jsonwebtoken');
-const config = require('config');
-const bcrypt = require('bcryptjs');
-const auth = require('../middleware/auth');
-const User = require('../models/User');
-
+const express = require("express");
+const jwt = require("jsonwebtoken");
+const config = require("config");
+const bcrypt = require("bcryptjs");
+const auth = require("../middleware/auth");
+const User = require("../models/User");
 const authRoute = express.Router();
 
-// @route       GET api/auth
-// @description Get Current User
-// @access      Public
-authRoute.get('/', auth, async (req, res) => {
+authRoute.get("/", auth, async (req, res) => {
   try {
-    const user = await User.findById(req.user.id).populate('user', ['firstName', 'lastInitial', 'email', 'role']).select('-password');
+    const user = await User.findById(req.user.id)
+      .populate("user", ["firstName", "lastInitial", "email", "role"])
+      .select("-password");
     res.json(user);
   } catch (err) {
     console.error(err.message);
-    res.status(500).send('Server Error');
+    res.status(500).send("Server Error");
   }
 });
 
-// @route       POST api/auth
-// @description Authenticate User && get token
-// @access      Public
-authRoute.post('/', async (req, res) => {
+authRoute.post("/", async (req, res) => {
   const { email, password } = req.body;
-
   try {
     let user = await User.findOne({ email });
-
     if (!user) {
       return res.status(400).json({
-        errors: [{ msg: 'Invalid credentials.' }],
+        errors: [{ msg: "Invalid credentials." }],
       });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(400).json({
-        errors: [{ msg: 'Invalid credentials.' }],
+        errors: [{ msg: "Invalid credentials." }],
       });
     }
 
@@ -50,9 +43,9 @@ authRoute.post('/', async (req, res) => {
 
     jwt.sign(
       payload,
-      config.get('jwtSecret'),
+      config.get("jwtSecret"),
       {
-        expiresIn: config.get('expiresIn'),
+        expiresIn: config.get("expiresIn"),
       },
       (error, token) => {
         if (error) throw error;
@@ -61,7 +54,7 @@ authRoute.post('/', async (req, res) => {
     );
   } catch (err) {
     console.error(err.message);
-    res.status(500).send('Server error');
+    res.status(500).send("Server error");
   }
 });
 

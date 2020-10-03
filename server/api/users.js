@@ -3,23 +3,29 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 
-const userRoute = express.Router();
 const auth = require('../middleware/auth');
 const userModel = require('../models/User');
+const userRoute = express.Router();
 
-// @route    POST api/users
-// @desc     Create user
-// @access   Public
-userRoute.post('/', async (req, res) => {
+// all users
+userRoute.get('/', auth, async (req, res) => {
+  try {
+    const users = await userModel.find();
+    res.json(users);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+// create user
+userRoute.post("/", async (req, res) => {
   const { firstName, lastInitial, email, password } = req.body;
-
   try {
     let user = await userModel.findOne({ email });
-
     if (user) {
-      return res.status(400).json({ errors: [{ msg: 'User already exists' }] });
+      return res.status(400).json({ errors: [{ msg: "User already exists" }] });
     }
-
     user = new userModel({
       firstName,
       lastInitial,
@@ -37,33 +43,22 @@ userRoute.post('/', async (req, res) => {
       },
     };
 
-    jwt.sign(payload, config.get('jwtSecret'), { expiresIn: '5 days' }, (err, token) => {
-      if (err) throw err;
-      res.json({ token });
-    });
+    jwt.sign(
+      payload,
+      config.get("jwtSecret"),
+      { expiresIn: "5 days" },
+      (err, token) => {
+        if (err) throw err;
+        res.json({ token });
+      }
+    );
   } catch (err) {
     console.error(err.message);
-    res.status(500).send('Server error');
+    res.status(500).send("Server error");
   }
 });
 
-// @route    GET api/users
-// @desc     Get all users
-// @access   Private
-// TODO: replace auth
-userRoute.get('/', auth, async (req, res) => {
-  try {
-    const users = await userModel.find();
-    res.json(users);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send('Server Error');
-  }
-});
-
-// @route       GET api/users/:id
-// @description Get user by user id
-// @access      Private
+// get specific user
 userRoute.get('/:id', async (req, res) => {
   try {
     const user = await userModel.findById(req.params.id)
@@ -83,5 +78,8 @@ userRoute.get('/:id', async (req, res) => {
   }
 });
 
+// stub routes for update user
+// put
+// delete
 
 module.exports = userRoute;

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
 import { useAuthStore } from '../contexts/auth';
 
 const Wrapper = styled.div`
@@ -8,19 +7,17 @@ padding: 20px;
 `;
 
 export const Login = () => {
-
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
-
   const {
     email,
     password,
   } = formData;
 
   const [state, actions] = useAuthStore();
-
+  
   const onChange = e => setFormData({
     ...formData,
     [e.target.name]: e.target.value
@@ -30,6 +27,7 @@ export const Login = () => {
     e.preventDefault();
     actions.login(formData);
   }
+  
   return (
     <Wrapper>
       <h1>Login Form</h1>
