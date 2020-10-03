@@ -20,7 +20,7 @@ export const actions = {
       setState({ error, loading: false });
     }
   },
-  add: (story) => async ({ setState, getState }) => {
+  addStory: (story) => async ({ setState, getState }) => {
     if (getState().loading) return;
     try {
       const res = await api.post("/stories", story);
