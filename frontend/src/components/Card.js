@@ -14,7 +14,6 @@ const StyledHeader3 = styled.h3`
 
 const Card = (props) => {
   const { title, body, created } = props;
-
   return (
     <CardWrapper>
       <StyledHeader3>{title}</StyledHeader3>

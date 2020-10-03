@@ -1,19 +1,19 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const StorySchema = new mongoose.Schema({
-  user: { type: mongoose.Schema.Types.ObjectId, ref: 'user' },
+  user: { type: mongoose.Schema.Types.ObjectId, ref: "user" },
   title: {
     type: String,
-    required: true
+    required: true,
   },
   body: {
     type: String,
-    required: true
+    required: true,
   },
   shared: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
-module.exports = Story = mongoose.model('story', StorySchema);
+module.exports = Story = mongoose.model("story", StorySchema);
