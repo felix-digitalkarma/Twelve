@@ -13,12 +13,11 @@ const StyledHeader3 = styled.h3`
 `;
 
 const Card = (props) => {
-  const { user, title, body, created } = props;
+  const { title, body, created } = props;
 
   return (
     <CardWrapper>
       <StyledHeader3>{title}</StyledHeader3>
-      {user.firstName} {user.lastInitial} -{" "}
       <Moment format="l">{created}</Moment>
       <p>{body}</p>
     </CardWrapper>
