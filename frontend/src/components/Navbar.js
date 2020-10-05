@@ -8,7 +8,6 @@ const ThemedNavbar = styled.nav`
   min-height: 70px;
   width: 100%;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   background: ${({ theme }) => theme.color.primary};
   color: ${({ theme }) => theme.color.secondary};
@@ -23,13 +22,6 @@ const NavLink = styled.a`
   &:hover {
     color: ${({ theme }) => theme.color.secondary};
   }
-`;
-
-const UserNavLink = styled(NavLink)`
-  display: flex;
-  margin-right: 10px;
-  margin-left: 10px;
-  justify-content: flex-end;
 `;
 
 export const Navbar = () => {
@@ -51,12 +43,12 @@ export const Navbar = () => {
         </NavLink>
       ) : (
         <Fragment>
-          <UserNavLink href="/register" theme={theme}>
+          <NavLink href="/register" theme={theme}>
             Register
-          </UserNavLink>
-          <UserNavLink href="/login" theme={theme}>
+          </NavLink>
+          <NavLink href="/login" theme={theme}>
             Login
-          </UserNavLink>
+          </NavLink>
         </Fragment>
       )}
     </ThemedNavbar>

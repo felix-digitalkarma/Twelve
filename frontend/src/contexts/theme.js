@@ -1,53 +1,52 @@
-import React from 'react';
+import React from "react";
 
 // define store initial state
 export const intitialState = {
   isLightTheme: true,
   dark: {
     color: {
-      primary: '#222222', // dark
-      primary_variant: '#5b358d', // darker purple
-      secondary: '#18cae6',
-      secondary_variant: '#018786', // darker teal
-      surface: '#222222', // sheets - cards, backgrounds
-      background: '#222222', // window background of app
+      primary: "#222222", // dark
+      primary_variant: "#5b358d", // darker purple
+      secondary: "#18cae6",
+      secondary_variant: "#018786", // darker teal
+      surface: "#222222", // sheets - cards, backgrounds
+      background: "#222222", // window background of app
       error: "#B00020", // for errors and warnings
       on: {
         primary: "#FFFFFF",
-        secondary: '#000000',
-        background: '#FFFFFF',
+        secondary: "#000000",
+        background: "#FFFFFF",
         surface: "#FFFFFF",
         error: "#FFFFFF",
-      }
+      },
     },
-    mobile: 'max-width: 768px',
+    mobile: "max-width: 768px",
   },
   light: {
     color: {
-      primary: '#222222', // purple represents colors of brand
-      primary_variant: '#5b358d', // lighter or darker shades of brand
-      secondary: '#18cae6', // teal represents accent colors of brand
-      secondary_variant: '#018786', // darker shades of brand
-      surface: '#FFFFFF', // sheets - cards, backgrounds
-      background: '#FFFFFF', // background of app
+      primary: "#2a52BE", // purple represents colors of brand
+      primary_variant: "#10A5F5", // lighter or darker shades of brand
+      secondary: "#00FFFF", // teal represents accent colors of brand
+      secondary_variant: "#00DBFF", // darker shades of brand
+      surface: "#FFFFFF", // sheets - cards, backgrounds
+      background: "#FFFFFF", // background of app
       error: "#B00020", // for errors and warnings
       on: {
         primary: "#FFFFFF", // white text against primary color
-        secondary: '#FFFFFF', // white text against secondary color
+        secondary: "#FFFFFF", // white text against secondary color
         surface: "#000000", // black text on white surface
-        background: '#000000', // black text on white background
+        background: "#000000", // black text on white background
         error: "#FFFFFF", // white text on red error background
-      }
+      },
     },
-    mobile: 'max-width: 768px',
-  }
+    mobile: "max-width: 768px",
+  },
 };
 
 // define actions to mutate
 // toggleTheme: !isLightTheme
 
-
-// create Store 
+// create Store
 
 // useHook or Subscriber/Consumer approach
 
