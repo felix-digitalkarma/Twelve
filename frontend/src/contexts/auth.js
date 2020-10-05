@@ -56,6 +56,7 @@ const actions = {
 };
 
 export const AuthStore = createStore({ initialState, actions });
+
 export const useAuthStore = createHook(AuthStore);
 export const AuthSubscriber = createSubscriber(AuthStore);
 export const AuthContainer = createContainer(AuthStore);

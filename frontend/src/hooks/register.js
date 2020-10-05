@@ -14,11 +14,11 @@ export const Register = () => {
     phone: "",
     password: "",
   });
-  
+
   const { firstName, lastInitial, email, phone, password } = formData;
   const [state, actions] = useUserStore();
   const { data } = state;
-  
+
   const onChange = (e) =>
     setFormData({
       ...formData,
