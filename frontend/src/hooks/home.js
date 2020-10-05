@@ -59,8 +59,8 @@ const Home = () => {
           It wasn't until I consistently went to meetings, that I discovered my
           issues with boundaries and trust. I placed a lot of emotional
           attachment to my work, for both my successes and failures. I've tried
-          to control outcomes and situations based on fear, which ultimately is
-          out of my control.
+          to control outcomes and situations based on fear, which ultimately
+          were out of my control.
         </p>
         <p>
           I’ve also spent time facilitating meetings and becoming more engaged

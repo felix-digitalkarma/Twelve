@@ -29,9 +29,9 @@ const HeroCarousel = () => {
           global communities through charitable donation. <br />
           <br />
           <a
-            className="btn btn-lg btn-primary"
             href="https://forms.gle/VHt4Hrb9QGiBTVcWA"
             role="button"
+            alt="Survey Form"
           >
             Take Survey
           </a>
@@ -43,7 +43,7 @@ const HeroCarousel = () => {
           Anonymity as a designing principle, recovery as a designing purpose,
           connection through modern technology. <br />
           <br />
-          <a href="/stories" className="btn btn-lg btn-success">
+          <a href="/stories" alt="user stories">
             User Stories
           </a>
         </p>
