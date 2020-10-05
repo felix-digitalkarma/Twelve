@@ -18,7 +18,7 @@ const SlideContainer = styled.div`
 
 const HeroCarousel = () => {
   return (
-    <Carousel>
+    <Carousel showThumbs={false} showStatus={false}>
       <SlideContainer>
         <img src={Img1} width="400px" />
         <p className="legend">meaningful personal recovery awareness</p>
