@@ -35,7 +35,7 @@ export const Navbar = () => {
   const [state, actions] = useAuthStore();
 
   useEffect(() => {
-    actions.get();
+    actions.loadUser();
   }, [actions]);
 
   return (
@@ -45,6 +45,7 @@ export const Navbar = () => {
         <NavLink href="/stories">Stories</NavLink>
         {state && state.isAuthenticated ? (
           <AuthBox>
+            Welcome {state.user && state.user.firstName}
             <AuthLink href="/" onClick={actions.logout}>
               Log Out
             </AuthLink>
