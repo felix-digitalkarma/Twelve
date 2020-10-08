@@ -7,8 +7,10 @@ const CardWrapper = styled.div`
   margin: 10px;
 `;
 
-const StyledHeader3 = styled.h3`
-  padding: 5px;
+const StyledHeader3 = styled.h3``;
+
+const StyledContent = styled.p`
+  padding: 0px;
   margin: 0px;
 `;
 
@@ -18,7 +20,7 @@ const Card = (props) => {
     <CardWrapper>
       <StyledHeader3>{title}</StyledHeader3>
       <Moment format="l">{created}</Moment>
-      <p>{body}</p>
+      <StyledContent>{body}</StyledContent>
     </CardWrapper>
   );
 };

@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import styled from "styled-components";
 import Theme from "../contexts/theme";
 
@@ -44,9 +44,11 @@ export const Navbar = () => {
         <NavLink href="/">Twelve.Community</NavLink>
         <NavLink href="/stories">Stories</NavLink>
         {state && state.isAuthenticated ? (
-          <AuthLink href="/" onClick={actions.logout}>
-            Log Out
-          </AuthLink>
+          <AuthBox>
+            <AuthLink href="/" onClick={actions.logout}>
+              Log Out
+            </AuthLink>
+          </AuthBox>
         ) : (
           <Fragment>
             <AuthBox>
