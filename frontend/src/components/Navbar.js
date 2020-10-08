@@ -1,8 +1,8 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment, useContext, useEffect } from "react";
 import styled from "styled-components";
+import Theme from "../contexts/theme";
 
 import { useAuthStore } from "../contexts/auth";
-import { ThemeContext } from "../contexts/theme";
 
 const ThemedNavbar = styled.nav`
   min-height: 70px;
@@ -14,6 +14,7 @@ const ThemedNavbar = styled.nav`
 `;
 
 const NavLink = styled.a`
+  display: flex;
   text-decoration: none;
   padding: 5px;
   margin-left: 10px;
@@ -24,34 +25,38 @@ const NavLink = styled.a`
   }
 `;
 
+const AuthBox = styled.div`
+  display: flex;
+  margin-left: auto;
+`;
+
+const AuthLink = styled(NavLink)``;
 export const Navbar = () => {
   const [state, actions] = useAuthStore();
-  const { isLightTheme, light, dark } = useContext(ThemeContext);
-  const theme = isLightTheme ? light : dark;
+
+  useEffect(() => {
+    actions.get();
+  }, [actions]);
 
   return (
-    <ThemedNavbar theme={theme}>
-      <NavLink href="/" theme={theme}>
-        Twelve.Community
-      </NavLink>
-      <NavLink href="/stories" theme={theme}>
-        Stories
-      </NavLink>
-      {state && state.isAuthenticated ? (
-        <NavLink href="/" onClick={actions.logout} theme={theme}>
-          Log Out
-        </NavLink>
-      ) : (
-        <Fragment>
-          <NavLink href="/register" theme={theme}>
-            Register
-          </NavLink>
-          <NavLink href="/login" theme={theme}>
-            Login
-          </NavLink>
-        </Fragment>
-      )}
-    </ThemedNavbar>
+    <Theme>
+      <ThemedNavbar>
+        <NavLink href="/">Twelve.Community</NavLink>
+        <NavLink href="/stories">Stories</NavLink>
+        {state && state.isAuthenticated ? (
+          <AuthLink href="/" onClick={actions.logout}>
+            Log Out
+          </AuthLink>
+        ) : (
+          <Fragment>
+            <AuthBox>
+              <AuthLink href="/register">Register</AuthLink>
+              <AuthLink href="/login">Login</AuthLink>
+            </AuthBox>
+          </Fragment>
+        )}
+      </ThemedNavbar>
+    </Theme>
   );
 };
 

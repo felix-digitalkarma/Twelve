@@ -17,7 +17,7 @@ export const Register = () => {
 
   const { firstName, lastInitial, email, phone, password } = formData;
   const [state, actions] = useUserStore();
-  const { data } = state;
+  console.log("reg: state: ", state);
 
   const onChange = (e) =>
     setFormData({

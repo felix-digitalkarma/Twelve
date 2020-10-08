@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const StyledFooter = styled.div`
   margin-top: 1rem;
@@ -12,30 +12,45 @@ const StyledFooter = styled.div`
 `;
 
 const NavContainer = styled.div`
-display:flex;
-flex-direction: row;
-justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 `;
 
 const NavLink = styled.a`
   text-decoration: none;
   padding: 5px;
-  color: #FFF;
+  color: #fff;
 `;
 
 const Footer = () => {
   return (
     <StyledFooter>
       <NavContainer>
-        <NavLink href="https://www.linkedin.com/in/felixmontanez/" rel="noopener noreferrer" target="_blank">LinkedIn</NavLink>
-        <NavLink href="https://github.com/felix-digitalkarma/Twelve" rel="noopener noreferrer" target="_blank">Github</NavLink>
-        <NavLink href="https://paypal.me/felixmontanez?locale.x=en_US" rel="noopener noreferrer" target="_blank">Paypal</NavLink>
+        <NavLink
+          href="https://www.linkedin.com/in/felixmontanez/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          LinkedIn
+        </NavLink>
+        <NavLink
+          href="https://github.com/felix-digitalkarma/Twelve"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Github
+        </NavLink>
+        <NavLink
+          href="https://paypal.me/felixmontanez?locale.x=en_US"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Support
+        </NavLink>
       </NavContainer>
-    </StyledFooter >
+    </StyledFooter>
   );
-}
+};
 
 export default Footer;
-
-
-
