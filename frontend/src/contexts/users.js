@@ -20,16 +20,7 @@ const actions = {
       setState({ error, loading: false })
     }
   },
-  create: (user) => async ({ setState, getState }) => {
-    if (getState().loading) return;
-    setState({ loading: true });
-    try {
-      const res = await api.post('/users', user);
-      setState({ data: res.data, loading: false })
-    } catch (error) {
-      setState({ error, loading: false })
-    }
-  },
+  
 };
 
 export const UserStore = createStore({ initialState, actions });

@@ -21,10 +21,14 @@ const actions = {
     if (getState().loading) return;
     setState({ loading: true });
     try {
-      /*  */
+      /* TODO: localStorage for token */
       const auth = await api.get("/auth");
-      console.log(auth);
-      setState({ data: auth.data, token: auth.data, loading: false });
+
+      setState({
+        data: auth.data,
+        token: auth.data,
+        loading: false,
+      });
     } catch (error) {
       setState({ error, loading: false });
     }
@@ -50,6 +54,22 @@ const actions = {
     setState({ loading: true });
     try {
       setState({ data: null, isAuthenticated: false, token: null });
+    } catch (error) {
+      setState({ error, loading: false });
+    }
+  },
+  register: (user) => async ({ setState, getState }) => {
+    if (getState().loading) return;
+    setState({ loading: true });
+    try {
+      const res = await api.post("/users", user);
+
+      setState({
+        data: res.data,
+        token: res.data.token,
+        isAuthenticated: true,
+        loading: false,
+      });
     } catch (error) {
       setState({ error, loading: false });
     }

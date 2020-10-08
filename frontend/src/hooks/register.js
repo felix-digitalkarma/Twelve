@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useUserStore } from "../contexts/users";
+import { useAuthStore } from "../contexts/auth";
 
 const Wrapper = styled.div`
   padding: 20px;
@@ -16,8 +16,8 @@ export const Register = () => {
   });
 
   const { firstName, lastInitial, email, phone, password } = formData;
-  const [state, actions] = useUserStore();
-  console.log("reg: state: ", state);
+  const [state, actions] = useAuthStore();
+  console.log(state);
 
   const onChange = (e) =>
     setFormData({
@@ -27,7 +27,7 @@ export const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    actions.create(formData);
+    actions.register(formData);
   };
 
   return (
