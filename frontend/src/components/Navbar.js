@@ -14,6 +14,7 @@ const ThemedNavbar = styled.nav`
 `;
 
 const NavLink = styled.a`
+  display: flex;
   text-decoration: none;
   padding: 5px;
   margin-left: 10px;
@@ -24,6 +25,12 @@ const NavLink = styled.a`
   }
 `;
 
+const AuthBox = styled.div`
+  display: flex;
+  margin-left: auto;
+`;
+
+const AuthLink = styled(NavLink)``;
 export const Navbar = () => {
   const [state, actions] = useAuthStore();
 
@@ -37,13 +44,15 @@ export const Navbar = () => {
         <NavLink href="/">Twelve.Community</NavLink>
         <NavLink href="/stories">Stories</NavLink>
         {state && state.isAuthenticated ? (
-          <NavLink href="/" onClick={actions.logout}>
+          <AuthLink href="/" onClick={actions.logout}>
             Log Out
-          </NavLink>
+          </AuthLink>
         ) : (
           <Fragment>
-            <NavLink href="/register">Register</NavLink>
-            <NavLink href="/login">Login</NavLink>
+            <AuthBox>
+              <AuthLink href="/register">Register</AuthLink>
+              <AuthLink href="/login">Login</AuthLink>
+            </AuthBox>
           </Fragment>
         )}
       </ThemedNavbar>
