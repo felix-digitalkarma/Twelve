@@ -21,7 +21,7 @@ const HeroCarousel = () => {
   return (
     <Carousel showThumbs={false} showStatus={false}>
       <SlideContainer>
-        <img src={Img1} />
+        <img src={Img1} alt="" />
         <p className="legend">
           To create a safe and secure platform for all to share personal stories
           of recovery, become involved with our communities through service,
@@ -38,7 +38,7 @@ const HeroCarousel = () => {
         </p>
       </SlideContainer>
       <SlideContainer>
-        <img src={Img2} />
+        <img src={Img2} alt="" />
         <p className="legend">
           Anonymity as a designing principle, recovery as a designing purpose,
           connection through modern technology. <br />

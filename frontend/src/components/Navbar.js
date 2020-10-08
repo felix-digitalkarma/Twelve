@@ -1,8 +1,8 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment, useContext, useEffect } from "react";
 import styled from "styled-components";
+import Theme from "../contexts/theme";
 
 import { useAuthStore } from "../contexts/auth";
-import { ThemeContext } from "../contexts/theme";
 
 const ThemedNavbar = styled.nav`
   min-height: 70px;
@@ -26,32 +26,28 @@ const NavLink = styled.a`
 
 export const Navbar = () => {
   const [state, actions] = useAuthStore();
-  const { isLightTheme, light, dark } = useContext(ThemeContext);
-  const theme = isLightTheme ? light : dark;
+
+  useEffect(() => {
+    actions.get();
+  }, [actions]);
 
   return (
-    <ThemedNavbar theme={theme}>
-      <NavLink href="/" theme={theme}>
-        Twelve.Community
-      </NavLink>
-      <NavLink href="/stories" theme={theme}>
-        Stories
-      </NavLink>
-      {state && state.isAuthenticated ? (
-        <NavLink href="/" onClick={actions.logout} theme={theme}>
-          Log Out
-        </NavLink>
-      ) : (
-        <Fragment>
-          <NavLink href="/register" theme={theme}>
-            Register
+    <Theme>
+      <ThemedNavbar>
+        <NavLink href="/">Twelve.Community</NavLink>
+        <NavLink href="/stories">Stories</NavLink>
+        {state && state.isAuthenticated ? (
+          <NavLink href="/" onClick={actions.logout}>
+            Log Out
           </NavLink>
-          <NavLink href="/login" theme={theme}>
-            Login
-          </NavLink>
-        </Fragment>
-      )}
-    </ThemedNavbar>
+        ) : (
+          <Fragment>
+            <NavLink href="/register">Register</NavLink>
+            <NavLink href="/login">Login</NavLink>
+          </Fragment>
+        )}
+      </ThemedNavbar>
+    </Theme>
   );
 };
 

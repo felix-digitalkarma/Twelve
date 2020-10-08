@@ -23,6 +23,7 @@ const actions = {
     try {
       /*  */
       const auth = await api.get("/auth");
+      console.log(auth);
       setState({ data: auth.data, token: auth.data, loading: false });
     } catch (error) {
       setState({ error, loading: false });

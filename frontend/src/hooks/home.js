@@ -13,7 +13,7 @@ const StyledH4 = styled.h4`
   padding-bottom: 0px;
 `;
 
-const StyledText = styled.p`
+const StyledText = styled.div`
   padding-left: 20px;
 `;
 
