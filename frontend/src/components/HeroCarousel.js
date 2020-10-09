@@ -6,8 +6,9 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 // assets
-import * as Img1 from "../assets/crp_unsplash.jpg";
-import * as Img2 from "../assets/daanstevens_group.jpg";
+const amazonURL = "https://twelve-app.s3-us-west-1.amazonaws.com/";
+const Img1 = amazonURL + "crp_unsplash.jpg";
+const Img2 = amazonURL + "daanstevens_group.jpg";
 
 const SlideContainer = styled.div`
   background-color: white;

@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import * as daniel from "../assets/daniel.jpg";
-import * as george from "../assets/george.jpg";
-import * as tom from "../assets/tom.jpg";
 import Avatar from "../components/Avatar";
+
+const amazonURL = "https://twelve-app.s3-us-west-1.amazonaws.com/";
+const danielURL = amazonURL + "daniel.jpg";
+const georgeURL = amazonURL + "george.jpg";
+const tomURL = amazonURL + "tom.jpg";
 
 const Wrapper = styled.div`
   padding: 20px;
@@ -36,7 +38,7 @@ const Personas = () => {
   return (
     <Wrapper>
       <Persona>
-        <Avatar image={daniel} width={"400px"} height={"400px"} />
+        <Avatar image={danielURL} width={"400px"} height={"400px"} />
         <PersonaTextBlock>
           Daniel C. “The Newcomer” <br />
           Age: 35 - 46 <br /> Employment: Unemployed <br />
@@ -61,7 +63,7 @@ const Personas = () => {
       </Persona>
 
       <Persona>
-        <Avatar image={george} width={"400px"} height={"400px"} />
+        <Avatar image={georgeURL} width={"400px"} height={"400px"} />
         <PersonaTextBlock>
           Georgina A . “The Attendee” <br />
           Age: 46-55 <br />
@@ -93,7 +95,7 @@ const Personas = () => {
       </Persona>
 
       <Persona>
-        <Avatar image={tom} width={"400px"} height={"400px"} />
+        <Avatar image={tomURL} width={"400px"} height={"400px"} />
         <PersonaTextBlock>
           Tom R . “The Trusted Servant” <br />
           Age: 65-77 <br />
