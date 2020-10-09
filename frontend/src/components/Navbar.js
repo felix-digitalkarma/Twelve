@@ -42,7 +42,6 @@ export const Navbar = () => {
     <Theme>
       <ThemedNavbar>
         <NavLink href="/">Twelve.Community</NavLink>
-
         <NavLink href="/personas">Personas</NavLink>
         <NavLink href="/stories">User Stories</NavLink>
         <NavLink href="/" className="isDisabled">
