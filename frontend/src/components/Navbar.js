@@ -46,20 +46,9 @@ export const Navbar = () => {
         <NavLink href="/personas">Personas</NavLink>
         <NavLink href="/stories">User Stories</NavLink>
         <NavLink href="/" className="isDisabled">
-          Rough Sketches
+          Scenario Mapping
         </NavLink>
-        <NavLink href="/" className="isDisabled">
-          User Flows
-        </NavLink>
-        <NavLink href="/" className="isDisabled">
-          Scenarios
-        </NavLink>
-        <NavLink href="/" className="isDisabled">
-          Site Map
-        </NavLink>
-        <NavLink href="/" className="isDisabled">
-          Wireframes
-        </NavLink>
+
         {/* {state && state.isAuthenticated ? (
           <AuthBox>
             Welcome {state.user && state.user.firstName}
