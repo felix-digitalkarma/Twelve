@@ -9,6 +9,7 @@ import Stories from "./hooks/stories";
 import Register from "./hooks/register";
 import Login from "./hooks/login";
 import AddStory from "./hooks/add-story";
+import Personas from "./hooks/personas";
 
 import { AuthContainer } from "./contexts/auth";
 
@@ -19,6 +20,7 @@ const App = () => {
       <Router>
         <Home path="/" />
         <Stories path="stories" />
+        <Personas path="personas" />
         <Register path="register" />
         <Login path="login" />
         <AddStory path="/add-story" />

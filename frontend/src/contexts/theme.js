@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 // define store initial state
 export const theme = {
   color: {
-    primary: "#2a52BE", // purple represents colors of brand
+    primary: "#222222", // #2a52BE purple represents colors of brand
     primary_variant: "#10A5F5", // lighter or darker shades of brand
     secondary: "#00FFFF", // teal represents accent colors of brand
     secondary_variant: "#00DBFF", // darker shades of brand

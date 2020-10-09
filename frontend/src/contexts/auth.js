@@ -10,23 +10,25 @@ import setAuthToken from "../utils/setAuthToken";
 
 const initialState = {
   isAuthenticated: false,
-  data: null,
+  user: null,
   token: "",
   loading: false,
   error: null,
 };
 
 const actions = {
-  get: () => async ({ setState, getState }) => {
+  loadUser: () => async ({ setState, getState }) => {
     if (getState().loading) return;
     setState({ loading: true });
     try {
-      /* TODO: localStorage for token */
+      const localToken = localStorage.getItem("token");
+      if (localToken) {
+        setAuthToken(localToken);
+      }
       const auth = await api.get("/auth");
-
       setState({
-        data: auth.data,
-        token: auth.data,
+        user: auth.data,
+        isAuthenticated: true,
         loading: false,
       });
     } catch (error) {
@@ -39,12 +41,12 @@ const actions = {
     try {
       const res = await api.post("/auth", creds);
       setState({
-        data: res.data,
         isAuthenticated: true,
         token: res.data.token,
         loading: false,
       });
-      setAuthToken({ token: res.data.token });
+      setAuthToken(res.data.token);
+      localStorage.setItem("token", res.data.token);
     } catch (error) {
       setState({ error, loading: false });
     }
@@ -54,6 +56,7 @@ const actions = {
     setState({ loading: true });
     try {
       setState({ data: null, isAuthenticated: false, token: null });
+      localStorage.clear();
     } catch (error) {
       setState({ error, loading: false });
     }
