@@ -44,7 +44,7 @@ export const Navbar = () => {
         <NavLink href="/">Twelve.Community</NavLink>
         <NavLink href="/stories">Stories</NavLink>
         <NavLink href="/personas">Personas</NavLink>
-        {state && state.isAuthenticated ? (
+        {/* {state && state.isAuthenticated ? (
           <AuthBox>
             Welcome {state.user && state.user.firstName}
             <AuthLink href="/" onClick={actions.logout}>
@@ -58,7 +58,7 @@ export const Navbar = () => {
               <AuthLink href="/login">Login</AuthLink>
             </AuthBox>
           </Fragment>
-        )}
+        )} */}
       </ThemedNavbar>
     </Theme>
   );
