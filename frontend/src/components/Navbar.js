@@ -43,6 +43,7 @@ export const Navbar = () => {
       <ThemedNavbar>
         <NavLink href="/">Twelve.Community</NavLink>
         <NavLink href="/stories">Stories</NavLink>
+        <NavLink href="/personas">Personas</NavLink>
         {state && state.isAuthenticated ? (
           <AuthBox>
             Welcome {state.user && state.user.firstName}
