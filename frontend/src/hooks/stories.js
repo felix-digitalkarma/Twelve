@@ -22,8 +22,8 @@ export const Stories = () => {
       </p>
       <ol>
         <li>
-          As an newcomer, I want to find to find recovery tools, whether that be
-          in the form of meetings, literature, videos or podcasts, methods or
+          As an newcomer, I want to find recovery tools, whether that be in the
+          form of meetings, literature, videos or podcasts, methods or
           techniques, so that I can be better educated to deal with my
           addictions, to start recovery and begin the healing process.
         </li>

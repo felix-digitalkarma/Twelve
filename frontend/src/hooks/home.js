@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import HeroCarousel from "../components/HeroCarousel";
-
 const CardWrapper = styled.div`
   padding: 0px;
   margin-bottom: 100px;
@@ -20,8 +18,7 @@ const StyledText = styled.div`
 const Home = () => {
   return (
     <CardWrapper>
-      <HeroCarousel showArrows={false} showStatus={false} />
-      <StyledH4>Prelude</StyledH4>
+      <StyledH4>Introduction</StyledH4>
       <StyledText>
         <p className="lead">
           The pandemic has disrupted our way of living, how we connect to others
