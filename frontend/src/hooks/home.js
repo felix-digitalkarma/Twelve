@@ -27,10 +27,9 @@ const Home = () => {
         <p>
           It has created isolation, despair and fear. For those that were on the
           path to recovery, suddenly being diverted off, needing to find their
-          way.{" "}
+          way.
         </p>
         <p>
-          {" "}
           The pandemic has also revealed the need to still connect, even more
           now than ever. The engine being in-person meetings which provided a
           safe space to hear other stories that mirrored my own. To know that I
@@ -40,33 +39,15 @@ const Home = () => {
           For those that suffer in silence, please know that you are not alone.
         </p>
       </StyledText>
-      <StyledH4>My Story</StyledH4>
+      <StyledH4>My Mission</StyledH4>
       <StyledText>
-        <p className="lead">
-          Hello, My name is Felix and I’m codependent, a child of an alcoholic,
-          a compulsive debtor, and I'm in recovery.
-        </p>
         <p>
-          I grew up with a pretty dysfunctional childhood, with an abusive
-          alcoholic father, a loving mother who worked multiple jobs. I isolated
-          heavily from the outside world, developed unhealthy standards for
-          intimacy and relationships.
-        </p>
-        <p>
-          It wasn't until I consistently went to meetings, that I discovered my
-          issues with boundaries and trust. I placed a lot of emotional
-          attachment to my work, for both my successes and failures. I've tried
-          to control outcomes and situations based on fear, which ultimately
-          were out of my control.
-        </p>
-        <p>
-          I’ve also spent time facilitating meetings and becoming more engaged
-          in my recovery. This is my social impact &amp; community service
-          project, born out of experience and the pursuit of love, awareness and
-          recovery.
+          To create a safe and secure platform for all to share personal stories
+          of recovery, become involved with our communities through service,
+          guiding others through sponsorship, and supporting our local and
+          global communities through charitable donation.
         </p>
       </StyledText>
-      <StyledH4>My Process</StyledH4>
       <StyledText>
         <p className="lead">The design approach allows for: </p>
 
