@@ -11,7 +11,7 @@ export const Stories = () => {
     <Wrapper>
       <Helmet>
         <title>Twelve : Stories</title>
-        <link rel="canonical" href="http://www.twelve.community" />
+        <link rel="canonical" href="http://www.twelve.community/stories" />
         <meta
           name="keywords"
           content="Spiritual,based,social,platform,Anonymity, designing principle,Recovery, purpose,Connection , modern technology"
