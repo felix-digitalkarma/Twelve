@@ -3,8 +3,7 @@ import { Router } from "@reach/router";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
-import Home from "./hooks/home";
+import Landing from "./hooks/landing";
 import Stories from "./hooks/stories";
 import Register from "./hooks/register";
 import Login from "./hooks/login";
@@ -18,7 +17,7 @@ const App = () => {
     <AuthContainer isGlobal>
       <Navbar />
       <Router>
-        <Home path="/" />
+        <Landing path="/" />
         <Stories path="stories" />
         <Personas path="personas" />
         <Register path="register" />

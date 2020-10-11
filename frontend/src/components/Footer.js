@@ -25,31 +25,28 @@ const NavLink = styled.a`
 
 const Footer = () => {
   return (
-    <StyledFooter>
+    <footer className="mastfoot text-center">
       <NavContainer>
-        <NavLink
-          href="https://www.linkedin.com/in/felixmontanez/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          LinkedIn
-        </NavLink>
-        <NavLink
-          href="https://github.com/felix-digitalkarma/Twelve"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Github
-        </NavLink>
-        <NavLink
-          href="https://paypal.me/felixmontanez?locale.x=en_US"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          Support
-        </NavLink>
+        <p>&copy; 2020 Twelve.Community {"  "}&middot;</p>
+        <p>
+          <NavLink href="" alt="linkedin">
+            LinkedIn
+          </NavLink>
+          &middot;
+        </p>
+        <p>
+          <NavLink href="" alt="github">
+            Github
+          </NavLink>
+          &middot;
+        </p>
+        <p>
+          <NavLink href="" alt="donate">
+            Support
+          </NavLink>
+        </p>
       </NavContainer>
-    </StyledFooter>
+    </footer>
   );
 };
 
