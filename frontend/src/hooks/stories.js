@@ -1,6 +1,5 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-
 import styled from "styled-components";
 
 const Wrapper = styled.div`
