@@ -1,16 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledFooter = styled.div`
-  margin-top: 1rem;
-  padding: 1rem;
-  background-color: #222;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-`;
-
 const NavContainer = styled.div`
   display: flex;
   flex-direction: row;

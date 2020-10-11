@@ -1,4 +1,6 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
+
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -8,6 +10,9 @@ const Wrapper = styled.div`
 export const Stories = () => {
   return (
     <Wrapper>
+      <Helmet>
+        <title>Twelve : Stories</title>
+      </Helmet>
       <h1>User Stories</h1>
       <p>
         &ldquo;A user story is short, specific and goal-oriented. It is a

@@ -1,4 +1,6 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
+
 import styled from "styled-components";
 import Avatar from "../components/Avatar";
 
@@ -28,6 +30,18 @@ const StyledInput = styled.input`
 const Landing = () => {
   return (
     <div className="text-center cover-container d-flex  p-3 mx-auto flex-column">
+      <Helmet>
+        <title>Twelve : Welcome</title>
+        <link rel="canonical" href="http://www.twelve.community" />
+        <meta
+          name="description"
+          content="To create a safe and secure platform for all to share personal stories of recovery, become involved with our communities through service, guiding others through sponsorship, and supporting our local and global communities through charitable donation."
+        />
+        <meta
+          name="keywords"
+          content="Spiritual,based,social,platform,Anonymity, designing principle,Recovery, purpose,Connection , modern technology"
+        />
+      </Helmet>
       <main role="main" className="inner cover">
         <div className="jumbotron ">
           <ImageContainer>

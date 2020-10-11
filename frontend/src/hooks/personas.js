@@ -1,4 +1,6 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
+
 import styled from "styled-components";
 import Avatar from "../components/Avatar";
 
@@ -37,6 +39,14 @@ const PersonaTextBlock = styled.div`
 const Personas = () => {
   return (
     <Wrapper>
+      <Helmet>
+        <title>Twelve : Personas</title>
+        <link rel="canonical" href="http://www.twelve.community" />
+        <meta
+          name="keywords"
+          content="Spiritual,based,social,platform,Anonymity, designing principle,Recovery, purpose,Connection , modern technology"
+        />
+      </Helmet>
       <Persona>
         <Avatar image={danielURL} width={"400px"} height={"400px"} />
         <PersonaTextBlock>
