@@ -41,7 +41,7 @@ const Personas = () => {
     <Wrapper>
       <Helmet>
         <title>Twelve : Personas</title>
-        <link rel="canonical" href="http://www.twelve.community" />
+        <link rel="canonical" href="http://www.twelve.community/personas" />
         <meta
           name="keywords"
           content="Spiritual,based,social,platform,Anonymity, designing principle,Recovery, purpose,Connection , modern technology"
