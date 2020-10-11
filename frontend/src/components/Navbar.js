@@ -1,36 +1,16 @@
-import React, { Fragment, useEffect } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import Theme from "../contexts/theme";
 
+import Theme from "../contexts/theme";
 import { useAuthStore } from "../contexts/auth";
 
-const ThemedNavbar = styled.nav`
-  min-height: 70px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  background: ${({ theme }) => theme.color.primary};
-  color: ${({ theme }) => theme.color.secondary};
+const StyledHeader = styled.header`
+  padding: 10px;
+  min-height: 60px;
+  margin-left: 20px;
+  margin-right: 20px;
 `;
 
-const NavLink = styled.a`
-  display: flex;
-  text-decoration: none;
-  padding: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
-  color: ${({ theme }) => theme.color.on.primary};
-  &:hover {
-    color: ${({ theme }) => theme.color.secondary};
-  }
-`;
-
-const AuthBox = styled.div`
-  display: flex;
-  margin-left: auto;
-`;
-
-const AuthLink = styled(NavLink)``;
 export const Navbar = () => {
   const [state, actions] = useAuthStore();
 
@@ -40,30 +20,29 @@ export const Navbar = () => {
 
   return (
     <Theme>
-      <ThemedNavbar>
-        <NavLink href="/">Twelve.Community</NavLink>
-        <NavLink href="/personas">Personas</NavLink>
-        <NavLink href="/stories">User Stories</NavLink>
-        <NavLink href="/" className="isDisabled">
-          Scenario Mapping
-        </NavLink>
-
-        {/* {state && state.isAuthenticated ? (
-          <AuthBox>
-            Welcome {state.user && state.user.firstName}
-            <AuthLink href="/" onClick={actions.logout}>
-              Log Out
-            </AuthLink>
-          </AuthBox>
-        ) : (
-          <Fragment>
-            <AuthBox>
-              <AuthLink href="/register">Register</AuthLink>
-              <AuthLink href="/login">Login</AuthLink>
-            </AuthBox>
-          </Fragment>
-        )} */}
-      </ThemedNavbar>
+      <StyledHeader>
+        <div className="inner ">
+          <h3 className="masthead-brand">
+            <a className="nav-link" href="/">
+              Twelve.Community
+            </a>
+          </h3>
+          <nav className="nav nav-masthead justify-content-center">
+            <a className="nav-link" href="/">
+              Home
+            </a>
+            <a className="nav-link" href="/personas">
+              Personas
+            </a>
+            <a className="nav-link" href="/stories">
+              Stories
+            </a>
+            <a className="nav-link" href="#">
+              Scenerio Mapping
+            </a>
+          </nav>
+        </div>
+      </StyledHeader>
     </Theme>
   );
 };
