@@ -1,5 +1,6 @@
 import React from "react";
 import { Router } from "@reach/router";
+import { HelmetProvider } from "react-helmet-async";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -15,16 +16,18 @@ import { AuthContainer } from "./contexts/auth";
 const App = () => {
   return (
     <AuthContainer isGlobal>
-      <Navbar />
-      <Router>
-        <Landing path="/" />
-        <Stories path="stories" />
-        <Personas path="personas" />
-        <Register path="register" />
-        <Login path="login" />
-        <AddStory path="/add-story" />
-      </Router>
-      <Footer />
+      <HelmetProvider>
+        <Navbar />
+        <Router>
+          <Landing path="/" />
+          <Stories path="stories" />
+          <Personas path="personas" />
+          <Register path="register" />
+          <Login path="login" />
+          <AddStory path="/add-story" />
+        </Router>
+        <Footer />
+      </HelmetProvider>
     </AuthContainer>
   );
 };

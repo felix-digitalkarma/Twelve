@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
 
+import styled from "styled-components";
 import Theme from "../contexts/theme";
 import { useAuthStore } from "../contexts/auth";
 
@@ -12,11 +12,11 @@ const StyledHeader = styled.header`
 `;
 
 export const Navbar = () => {
-  const [state, actions] = useAuthStore();
+  const [{ isAuthenticated }, actions] = useAuthStore();
 
   useEffect(() => {
-    actions.loadUser();
-  }, [actions]);
+    if (isAuthenticated) actions.loadUser();
+  }, [isAuthenticated, actions]);
 
   return (
     <Theme>
@@ -37,7 +37,7 @@ export const Navbar = () => {
             <a className="nav-link" href="/stories">
               Stories
             </a>
-            <a className="nav-link" href="#">
+            <a className="nav-link disabled" href="/">
               Scenerio Mapping
             </a>
           </nav>

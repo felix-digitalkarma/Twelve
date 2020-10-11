@@ -5,9 +5,9 @@ import { ThemeProvider } from "styled-components";
 export const theme = {
   color: {
     primary: "#222222", // #2a52BE purple represents colors of brand
-    primary_variant: "#10A5F5", // lighter or darker shades of brand
-    secondary: "#00FFFF", // teal represents accent colors of brand
-    secondary_variant: "#00DBFF", // darker shades of brand
+    primary_variant: "#7a7a7a", // lighter or darker shades of brand
+    secondary: "#18cae6", // tron represent accent colors of brand
+    secondary_variant: "#108da1", // darker shades of brand
     surface: "#FFFFFF", // sheets - cards, backgrounds
     background: "#FFFFFF", // background of app
     error: "#B00020", // for errors and warnings
@@ -19,7 +19,9 @@ export const theme = {
       error: "#FFFFFF", // white text on red error background
     },
   },
-  mobile: "max-width: 768px",
+  mobile: "screen and (max-width: 768px)",
+  tablet: "screen and (max-width: 768px)",
+  desktop: "screen and (max-width: 768px)",
 };
 
 const Theme = ({ children }) => (
