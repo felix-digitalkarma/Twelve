@@ -12,6 +12,11 @@ export const Stories = () => {
     <Wrapper>
       <Helmet>
         <title>Twelve : Stories</title>
+        <link rel="canonical" href="http://www.twelve.community" />
+        <meta
+          name="keywords"
+          content="Spiritual,based,social,platform,Anonymity, designing principle,Recovery, purpose,Connection , modern technology"
+        />
       </Helmet>
       <h1>User Stories</h1>
       <p>
