@@ -88,7 +88,7 @@ const Landing = () => {
                     value="Subscribe"
                     name="subscribe"
                     id="mc-embedded-subscribe"
-                    className="btn btn-info"
+                    className="btn btn-success"
                   />
                 </div>
               </div>

@@ -21,7 +21,7 @@ export const Navbar = () => {
   return (
     <Theme>
       <StyledHeader>
-        <div className="inner ">
+        <div className="inner text-center">
           <h3 className="masthead-brand">
             <a className="nav-link" href="/">
               Twelve.Community
