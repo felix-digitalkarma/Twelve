@@ -2,6 +2,8 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import styled from "styled-components";
 
+import Card from "../components/Card";
+
 import Avatar from "../components/Avatar";
 import python_logo from "../assets/python_logo.png";
 import circuit_logo from "../assets/circuit.png";
