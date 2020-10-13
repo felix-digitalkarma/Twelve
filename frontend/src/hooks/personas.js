@@ -16,6 +16,13 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  max-width: 1200px;
+  margin: 0px auto;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: auto;
+  }
 `;
 
 const CardWrapper = styled.div`
