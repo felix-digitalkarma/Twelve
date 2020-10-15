@@ -50,24 +50,24 @@ const Landing = () => {
         <h1 className="cover-heading">Story Driven Recovery</h1>
 
         <p className="lead">
-          Through machine-learning, artificial intelligence and the sharing of
-          our own stories we can become involved with our communities through
-          service, sponsorship, and support for our local and global
-          communities.
-        </p>
-        <p className="lead">
           Twelve Community is a non-profit Spiritually-based social platform
           with a mission to create a safe and secure platform for all to share
           personal stories of recovery, become involved with our communities
           through service, guiding others through sponsorship, and supporting
           our local and global communities through charitable donation.
         </p>
+
         <p className="lead">
           User stories are submitted and analyzed through machine-learning with
-          help of artificial intelligence (python, DeepMind), then used to make
-          recommendations for recovery tools, meetings, etc
+          help of artificial intelligence (using Python, DeepMind), then used to
+          make recommendations for recovery tools, meetings, etc
         </p>
-
+        <p className="lead">
+          Through machine-learning, artificial intelligence and the sharing of
+          our own stories we can become involved with our communities through
+          service, sponsorship, and support for our local and global
+          communities.
+        </p>
         <div className="mailchimp">
           <div id="mc_embed_signup">
             <form
@@ -83,7 +83,7 @@ const Landing = () => {
                 <label htmlFor="mce-EMAIL">
                   Subscribe to hear about project updates.
                 </label>
-                <br />
+
                 <input
                   type="email"
                   name="EMAIL"
