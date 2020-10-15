@@ -2,8 +2,6 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import styled from "styled-components";
 
-import Card from "../components/Card";
-
 import Avatar from "../components/Avatar";
 import python_logo from "../assets/python_logo.png";
 import circuit_logo from "../assets/circuit.png";
@@ -56,6 +54,18 @@ const Landing = () => {
           our own stories we can become involved with our communities through
           service, sponsorship, and support for our local and global
           communities.
+        </p>
+        <p className="lead">
+          Twelve Community is a non-profit Spiritually-based social platform
+          with a mission to create a safe and secure platform for all to share
+          personal stories of recovery, become involved with our communities
+          through service, guiding others through sponsorship, and supporting
+          our local and global communities through charitable donation.
+        </p>
+        <p className="lead">
+          User stories are submitted and analyzed through machine-learning with
+          help of artificial intelligence (python, DeepMind), then used to make
+          recommendations for recovery tools, meetings, etc
         </p>
 
         <div className="mailchimp">
