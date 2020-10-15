@@ -29,8 +29,7 @@ html,
 body {
   height: 100vh;
   width: 100vw;
-  background-color: #333;
-  color: #fff;
+  
   display: -ms-flexbox;
   display: flex;
 }
@@ -44,6 +43,11 @@ body {
 /*
  * Header
  */
+
+ .cover-heading {
+   font-weight: bold;
+   color: white;
+ }
 .masthead {
   margin-bottom: 2rem;
 }

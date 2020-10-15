@@ -17,8 +17,8 @@ export const Stories = () => {
           content="Spiritual,based,social,platform,Anonymity, designing principle,Recovery, purpose,Connection , modern technology"
         />
       </Helmet>
-      <h1>User Stories</h1>
-      <p>
+      <h1 className="cover-heading">User Stories</h1>
+      <p className="lead">
         &ldquo;A user story is short, specific and goal-oriented. It is a
         one-sentence statement that tends to have the following structure: “As a
         X, I want Y so that Z occurs”. Based on persona, describe the path the
