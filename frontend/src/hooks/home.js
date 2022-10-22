@@ -39,7 +39,7 @@ const Home = () => {
           For those that suffer in silence, please know that you are not alone.
         </p>
       </StyledText>
-      <StyledH4>My Mission</StyledH4>
+      <StyledH2>My Mission</StyledH2>
       <StyledText>
         <p>
           To create a safe and secure platform for all to share personal stories
