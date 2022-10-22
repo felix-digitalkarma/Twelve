@@ -1,10 +1,10 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 const Avatar = (props) => {
   return (
-    <div>
+    <Fragment>
       <img src={props.image} width={props.width} height={props.height} alt="" />
-    </div>
+    </Fragment>
   );
 };
 

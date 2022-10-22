@@ -12,6 +12,7 @@ const ImageIcons = styled(Avatar)`
   margin-right: 10px;
 `;
 
+// Something here
 const ImageContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -28,27 +29,24 @@ const StyledInput = styled.input`
 
 const Landing = () => {
   return (
-    <div className="text-center cover-container d-flex  p-3 mx-auto flex-column">
+    <div className="text-center cover-container d-flex p-3 mx-auto flex-column">
       <Helmet>
-        <title>Twelve : Welcome</title>
+        <title>Twelve : Intro</title>
         <link rel="canonical" href="http://www.twelve.community" />
         <meta
           name="keywords"
-          content="Spiritual,based,social,platform,Anonymity, designing principle,Recovery, purpose,Connection , modern technology"
+          content="spiritual,based,social,platform,Anonymity,designing principle,recovery,purpose,connection,modern technology"
         />
       </Helmet>
       <main role="main" className="inner cover">
         <div className="jumbotron ">
           <ImageContainer>
             <ImageIcons image={python_logo} height={"100px"} width={"100px"} />
-
             <ImageIcons image={circuit_logo} height={"100px"} width={"100px"} />
-
             <ImageIcons image={ai_logo} height={"100px"} width={"100px"} />
           </ImageContainer>
         </div>
         <h1 className="cover-heading">Story Driven Recovery</h1>
-
         <p className="lead">
           Twelve Community is a non-profit Spiritually-based social platform
           with a mission to create a safe and secure platform for all to share
@@ -56,7 +54,6 @@ const Landing = () => {
           through service, guiding others through sponsorship, and supporting
           our local and global communities through charitable donation.
         </p>
-
         <p className="lead">
           User stories are submitted and analyzed through machine-learning with
           help of artificial intelligence (using Python, DeepMind), then used to

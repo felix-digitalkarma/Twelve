@@ -1,16 +1,60 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import styled from "styled-components";
+import { Helmet } from "react-helmet-async";
+import { useStories } from "../contexts/stories";
+import Card from "../components/Card";
+
+const danielURL = "https://twelve-app.s3-us-west-1.amazonaws.com/daniel.jpg";
 
 const Wrapper = styled.div`
   padding: 40px;
 `;
 
-export const Stories = () => {
+const Container = styled.div`
+  display: flex;
+  border: 1px solid red;
+  justify-content: space-between;
+  flex-direction: row;
+  max-width: 1600px;
+  margin: 0px auto;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: auto;
+  }
+`;
+
+const CardWrapper = styled.div`
+  margin: 5px;
+  display: inline-block;
+  flex-direction: row;
+  min-width: 100%;
+`;
+
+export const Story = (props) => {
+  console.log("story props", props);
+
+  return (
+    <CardWrapper>
+      <Card title={props.title} image={danielURL} snippet={props.body} />
+    </CardWrapper>
+  );
+};
+
+export const Stories = (props) => {
+  const [state, actions] = useStories();
+  if (props.path === "stories") {
+    if (state.data === null) {
+      actions.fetch();
+    }
+  }
+
+  const stories = state.data || [];
+
   return (
     <Wrapper>
       <Helmet>
-        <title>Twelve : Stories</title>
+        <title>Twelve : Stories </title>
         <link rel="canonical" href="http://www.twelve.community/stories" />
         <meta
           name="keywords"
@@ -18,6 +62,7 @@ export const Stories = () => {
         />
       </Helmet>
       <h1 className="cover-heading">User Stories</h1>
+
       <p className="lead">
         &ldquo;A user story is short, specific and goal-oriented. It is a
         one-sentence statement that tends to have the following structure: “As a
@@ -29,36 +74,16 @@ export const Stories = () => {
         </a>
         .
       </p>
-      <ol>
-        <li>
-          As an newcomer, I want to find recovery tools, whether that be in the
-          form of meetings, literature, videos or podcasts, methods or
-          techniques, so that I can be better educated to deal with my
-          addictions, to start recovery and begin the healing process.
-        </li>
-        <li>
-          As an attendee, I want to be notified of upcoming workshops or
-          conferences that I might be interested in attending so that I can
-          discover new paths or areas that I want to heal within myself.
-        </li>
-        <li>
-          As a trusted servant, I want to find speakers for my local meeting
-          easily
-        </li>
-        <li>
-          As a trusted servant, I want to find an easier way to share documents,
-          readings, etc. literature during meetings (volunteers for reading),
-        </li>
-        <li>
-          As a trusted servant, I want to find an easy way to manage currency
-          with minimal risk, keep track of donations and be able to share that
-          information.
-        </li>
-        <li>
-          As a trusted servant, I want a way to pass information from regional
-          levels to local meetings.
-        </li>
-      </ol>
+      <Container>
+        <ul>
+          {stories !== null &&
+            stories.map((story) => (
+              <li>
+                <Story title={story.title} body={story.body} />
+              </li>
+            ))}
+        </ul>
+      </Container>
     </Wrapper>
   );
 };

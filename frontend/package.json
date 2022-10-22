@@ -11,7 +11,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "axios": "^0.20.0",
+    "axios": "^0.26.1",
     "history": "^5.0.0",
     "moment": "^2.29.0",
     "react": "^16.13.1",
@@ -46,7 +46,7 @@
   "devDependencies": {
     "http-proxy-middleware": "^1.0.5"
   },
-  "engines" : {
-    "node" : "12.19.0"
-  } 
+  "engines": {
+    "node": "12.19.0"
+  }
 }

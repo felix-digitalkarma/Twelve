@@ -17,66 +17,74 @@ const initialState = {
 };
 
 const actions = {
-  loadUser: () => async ({ setState, getState }) => {
-    if (getState().loading) return;
-    setState({ loading: true });
-    try {
-      const localToken = localStorage.getItem("token");
-      if (localToken) {
-        setAuthToken(localToken);
+  loadUser:
+    () =>
+    async ({ setState, getState }) => {
+      if (getState().loading) return;
+      setState({ loading: true });
+      try {
+        const localToken = localStorage.getItem("token");
+        if (localToken) {
+          setAuthToken(localToken);
+        }
+        const auth = await api.get("/auth");
+        setState({
+          user: auth.data,
+          isAuthenticated: true,
+          loading: false,
+        });
+      } catch (error) {
+        setState({ error, loading: false });
       }
-      const auth = await api.get("/auth");
-      setState({
-        user: auth.data,
-        isAuthenticated: true,
-        loading: false,
-      });
-    } catch (error) {
-      setState({ error, loading: false });
-    }
-  },
-  login: (creds) => async ({ setState, getState }) => {
-    if (getState().loading) return;
-    setState({ loading: true });
-    try {
-      const res = await api.post("/auth", creds);
-      setState({
-        isAuthenticated: true,
-        token: res.data.token,
-        loading: false,
-      });
-      setAuthToken(res.data.token);
-      localStorage.setItem("token", res.data.token);
-    } catch (error) {
-      setState({ error, loading: false });
-    }
-  },
-  logout: () => async ({ setState, getState }) => {
-    if (getState().loading) return;
-    setState({ loading: true });
-    try {
-      setState({ data: null, isAuthenticated: false, token: null });
-      localStorage.clear();
-    } catch (error) {
-      setState({ error, loading: false });
-    }
-  },
-  register: (user) => async ({ setState, getState }) => {
-    if (getState().loading) return;
-    setState({ loading: true });
-    try {
-      const res = await api.post("/users", user);
+    },
+  login:
+    (creds) =>
+    async ({ setState, getState }) => {
+      if (getState().loading) return;
+      setState({ loading: true });
+      try {
+        const res = await api.post("/auth", creds);
+        setState({
+          isAuthenticated: true,
+          token: res.data.token,
+          loading: false,
+        });
+        setAuthToken(res.data.token);
+        localStorage.setItem("token", res.data.token);
+      } catch (error) {
+        setState({ error, loading: false });
+      }
+    },
+  logout:
+    () =>
+    async ({ setState, getState }) => {
+      if (getState().loading) return;
+      setState({ loading: true });
+      try {
+        setState({ data: null, isAuthenticated: false, token: null });
+        localStorage.clear();
+      } catch (error) {
+        setState({ error, loading: false });
+      }
+    },
+  register:
+    (user) =>
+    async ({ setState, getState }) => {
+      if (getState().loading) return;
+      setState({ loading: true });
+      try {
+        const res = await api.post("/users", user);
 
-      setState({
-        data: res.data,
-        token: res.data.token,
-        isAuthenticated: true,
-        loading: false,
-      });
-    } catch (error) {
-      setState({ error, loading: false });
-    }
-  },
+        setState({
+          data: res.data,
+          token: res.data.token,
+          isAuthenticated: true,
+          loading: false,
+        });
+      } catch (error) {
+        setState({ error, loading: false });
+      }
+    },
 };
 
 export const AuthStore = createStore({ initialState, actions });

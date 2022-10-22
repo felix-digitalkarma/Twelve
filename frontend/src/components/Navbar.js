@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-
 import styled from "styled-components";
 import Theme from "../contexts/theme";
 import { useAuthStore } from "../contexts/auth";
@@ -28,8 +27,8 @@ export const Navbar = () => {
             </a>
           </h3>
           <nav className="nav nav-masthead justify-content-center">
-            <a className="nav-link" href="/">
-              Home
+            <a className="nav-link" href="/login">
+              Login
             </a>
             <a className="nav-link" href="/personas">
               Personas
@@ -37,8 +36,8 @@ export const Navbar = () => {
             <a className="nav-link" href="/stories">
               Stories
             </a>
-            <a className="nav-link disabled" href="/">
-              Scenerio Mapping
+            <a className="nav-link" href="/register">
+              Sign Up
             </a>
           </nav>
         </div>

@@ -38,7 +38,7 @@ export const Register = () => {
           type="text"
           name="firstName"
           className="form-control"
-          placeholder="First name"
+          placeholder="John"
           id="firstName"
           value={firstName}
           onChange={(e) => onChange(e)}
@@ -48,7 +48,7 @@ export const Register = () => {
           type="text"
           name="lastInitial"
           id="lastInitial"
-          placeholder="Last Initial"
+          placeholder="D"
           value={lastInitial}
           onChange={(e) => onChange(e)}
           required

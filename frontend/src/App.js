@@ -4,12 +4,14 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Landing from "./hooks/landing";
+// import Landing from "./hooks/landing";
+import Home from "./hooks/home";
 import Stories from "./hooks/stories";
 import Register from "./hooks/register";
 import Login from "./hooks/login";
 import AddStory from "./hooks/add-story";
 import Personas from "./hooks/personas";
+// import Test from "./hooks/test";
 
 import { AuthContainer } from "./contexts/auth";
 
@@ -31,12 +33,12 @@ const App = () => {
         </Helmet>
         <Navbar />
         <Router>
-          <Landing path="/" />
+          <Home path="/" />
           <Stories path="stories" />
           <Personas path="personas" />
           <Register path="register" />
           <Login path="login" />
-          <AddStory path="/add-story" />
+          <AddStory path="add-story" />
         </Router>
         <Footer />
       </HelmetProvider>
