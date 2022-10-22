@@ -15,7 +15,7 @@ const Container = styled.div`
   border: 1px solid red;
   justify-content: space-between;
   flex-direction: row;
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 0px auto;
   @media screen and (max-width: 768px) {
     flex-direction: column;
