@@ -6,7 +6,7 @@ const CardWrapper = styled.div`
   margin-bottom: 100px;
 `;
 
-const StyledH4 = styled.h4`
+const StyledH2 = styled.h2`
   padding-left: 20px;
   padding-bottom: 0px;
 `;
@@ -18,7 +18,7 @@ const StyledText = styled.div`
 const Home = () => {
   return (
     <CardWrapper>
-      <StyledH4>Introduction</StyledH4>
+      <StyledH2>Introduction</StyledH2>
       <StyledText>
         <p className="lead">
           The pandemic has disrupted our way of living, how we connect to others
@@ -39,7 +39,7 @@ const Home = () => {
           For those that suffer in silence, please know that you are not alone.
         </p>
       </StyledText>
-      <StyledH4>My Mission</StyledH4>
+      <StyledH2>My Mission</StyledH2>
       <StyledText>
         <p>
           To create a safe and secure platform for all to share personal stories
