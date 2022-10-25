@@ -52,11 +52,11 @@ export default function UserStoryCard(props) {
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
-            {props.lastInitial}
+            {props.user.lastInitial}
           </Avatar>
         }
         title={props.title}
-        subheader={props.name}
+        subheader={props.user.firstName}
       />
       <CardMedia
         className={classes.media}

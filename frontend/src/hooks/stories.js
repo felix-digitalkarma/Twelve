@@ -33,13 +33,21 @@ const CardWrapper = styled.div`
 `;
 
 export const Story = (props) => {
-  return <Card title={props.title} image={danielURL} snippet={props.body} />;
+  console.log(props);
+  return (
+    <Card
+      title={props.title}
+      user={props.user}
+      image={danielURL}
+      snippet={props.body}
+    />
+  );
 };
 
 export const Stories = (props) => {
   const [state, actions] = useStories();
   if (props.path === "stories") {
-    console.log(state.data);
+    // console.log(state.data);
     if (state.data === null) {
       actions.fetch();
     }
@@ -74,11 +82,19 @@ export const Stories = (props) => {
         <ul>
           {stories !== null &&
             stories.map((story) => (
-              <li>
-                <button onClick={actions.removeStory(story)}>
+              <li key={story._id}>
+                <button
+                  onClick={() => {
+                    actions.removeStory(story._id);
+                  }}
+                >
                   Click To Remove
                 </button>
-                <Story title={story.title} body={story.body} />
+                <Story
+                  user={story.user}
+                  title={story.title}
+                  body={story.body}
+                />
               </li>
             ))}
         </ul>
