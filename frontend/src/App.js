@@ -35,7 +35,6 @@ const App = () => {
         <Router>
           <Home path="/" />
           <Stories path="stories" />
-          <Personas path="personas" />
           <Register path="register" />
           <Login path="login" />
           <AddStory path="add-story" />

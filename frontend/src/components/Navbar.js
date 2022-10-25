@@ -30,9 +30,6 @@ export const Navbar = () => {
             <a className="nav-link" href="/login">
               Login
             </a>
-            <a className="nav-link" href="/personas">
-              Personas
-            </a>
             <a className="nav-link" href="/stories">
               Stories
             </a>

@@ -10,25 +10,40 @@ export const initialState = {
 
 // define actions that mutate state
 export const actions = {
-  fetch: () => async ({ setState, getState }) => {
-    if (getState().loading) return;
-    setState({ loading: true });
-    try {
-      const stories = await api.get("/stories");
-      setState({ data: stories.data, loading: false });
-    } catch (error) {
-      setState({ error, loading: false });
-    }
-  },
-  addStory: (story) => async ({ setState, getState }) => {
-    if (getState().loading) return;
-    try {
-      const res = await api.post("/stories", story);
-      setState({ data: res.data, loading: false });
-    } catch (error) {
-      setState({ error, loading: false });
-    }
-  },
+  fetch:
+    () =>
+    async ({ setState, getState }) => {
+      if (getState().loading) return;
+      setState({ loading: true });
+      try {
+        const stories = await api.get("/stories");
+        setState({ data: stories.data, loading: false });
+      } catch (error) {
+        setState({ error, loading: false });
+      }
+    },
+  addStory:
+    (story) =>
+    async ({ setState, getState }) => {
+      if (getState().loading) return;
+      try {
+        const res = await api.post("/stories", story);
+        setState({ data: res.data, loading: false });
+      } catch (error) {
+        setState({ error, loading: false });
+      }
+    },
+  removeStory:
+    (story) =>
+    async ({ setState, getState }) => {
+      if (getState().loading) return;
+      try {
+        const res = await api.delete(`/${story._id}`);
+        setState({ data: res.data, loading: false });
+      } catch (error) {
+        setState({ error, loading: false });
+      }
+    },
 };
 
 // create Store with initial state,

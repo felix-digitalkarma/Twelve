@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Helmet } from "react-helmet-async";
 import { useStories } from "../contexts/stories";
 import Card from "../components/Card";
+import { Link } from "@reach/router";
 
 const danielURL = "https://twelve-app.s3-us-west-1.amazonaws.com/daniel.jpg";
 
@@ -32,25 +33,20 @@ const CardWrapper = styled.div`
 `;
 
 export const Story = (props) => {
-  console.log("story props", props);
-
-  return (
-    <CardWrapper>
-      <Card title={props.title} image={danielURL} snippet={props.body} />
-    </CardWrapper>
-  );
+  return <Card title={props.title} image={danielURL} snippet={props.body} />;
 };
 
 export const Stories = (props) => {
   const [state, actions] = useStories();
   if (props.path === "stories") {
+    console.log(state.data);
     if (state.data === null) {
       actions.fetch();
     }
   }
 
   const stories = state.data || [];
-
+  console.log("stories", stories);
   return (
     <Wrapper>
       <Helmet>
@@ -72,13 +68,16 @@ export const Stories = (props) => {
         <a href="https://www.interaction-design.org/literature/article/user-stories-as-a-ux-designer-i-want-to-embrace-agile-so-that-i-can-make-my-projects-user-centered">
           Interaction Design.org
         </a>
-        .
       </p>
+      <Link to="/add-story">Add Story</Link>
       <Container>
         <ul>
           {stories !== null &&
             stories.map((story) => (
               <li>
+                <button onClick={actions.removeStory(story)}>
+                  Click To Remove
+                </button>
                 <Story title={story.title} body={story.body} />
               </li>
             ))}

@@ -13,11 +13,11 @@ export const Register = () => {
     email: "",
     phone: "",
     password: "",
+    role: "",
   });
 
   const { firstName, lastInitial, email, phone, password } = formData;
   const [state, actions] = useAuthStore();
-  console.log(state);
 
   const onChange = (e) =>
     setFormData({
@@ -33,6 +33,7 @@ export const Register = () => {
   return (
     <Wrapper>
       <h1>Register Form</h1>
+      {state.isAuthenticated}
       <form onSubmit={(e) => handleSubmit(e)}>
         <input
           type="text"

@@ -1,12 +1,12 @@
-const mongoose = require('mongoose');
-const config = require('config');
+const mongoose = require("mongoose");
+const config = require("config");
 
-const pro_mongoDB = config.get('PRO_MONGO');
-const dev_mongoDB = config.get('DEV_MONGO');
+const pro_mongoDB = config.get("PRO_MONGO");
+const dev_mongoDB = config.get("DEV_MONGO");
 // const local_mongo = config.get('LOCAL_MONGO');
 
-let environment = process.env.NODE_ENV || 'development';
-const db = environment === 'production' ? pro_mongoDB : dev_mongoDB;
+let environment = process.env.NODE_ENV || "development";
+const db = environment === "production" ? pro_mongoDB : dev_mongoDB;
 
 const connectDB = async () => {
   try {
@@ -16,7 +16,7 @@ const connectDB = async () => {
       useCreateIndex: true,
       useFindAndModify: false,
     });
-    console.log(`${environment} connected...`);
+    console.log(`ENV: ${environment} connected...`);
   } catch (err) {
     console.error(err.message);
     // exit process with failure
