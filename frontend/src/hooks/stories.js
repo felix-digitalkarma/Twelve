@@ -64,11 +64,11 @@ export const Stories = (props) => {
       <h1 className="cover-heading">User Stories</h1>
 
       <p className="lead">
-        &ldquo;A user story is short, specific and goal-oriented. It is a
+        A user story is short, specific and goal-oriented. It is a
         one-sentence statement that tends to have the following structure: “As a
         X, I want Y so that Z occurs”. Based on persona, describe the path the
         user takes from initial qualifying event to finding recovery, attending
-        and organizing meetings.&rdquo; -{" "}
+        and organizing meetings. -{" "}
         <a href="https://www.interaction-design.org/literature/article/user-stories-as-a-ux-designer-i-want-to-embrace-agile-so-that-i-can-make-my-projects-user-centered">
           Interaction Design.org
         </a>
