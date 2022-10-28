@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Helmet } from "react-helmet-async";
 import { useStories } from "../contexts/stories";
 import Card from "../components/Card";
-import { Link } from "@reach/router";
+import { Link, useNavigate } from "@reach/router";
 
 const danielURL = "https://twelve-app.s3-us-west-1.amazonaws.com/daniel.jpg";
 
@@ -46,6 +46,7 @@ export const Story = (props) => {
 
 export const Stories = (props) => {
   const [state, actions] = useStories();
+  const navigate = useNavigate();
   if (props.path === "stories") {
     // console.log(state.data);
     if (state.data === null) {
@@ -85,7 +86,8 @@ export const Stories = (props) => {
               <li key={story._id}>
                 <button
                   onClick={() => {
-                    actions.removeStory(story._id);
+                    actions.removeStory(story);
+                    navigate("/");
                   }}
                 >
                   Click To Remove

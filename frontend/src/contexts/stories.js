@@ -34,11 +34,11 @@ export const actions = {
       }
     },
   removeStory:
-    (id) =>
+    (story) =>
     async ({ setState, getState }) => {
       if (getState().loading) return;
       try {
-        const res = await api.delete(`/stories/${id}`);
+        const res = await api.delete(`/stories/${story._id}`);
         console.log(res);
         setState({ data: res.data, loading: false });
       } catch (error) {
