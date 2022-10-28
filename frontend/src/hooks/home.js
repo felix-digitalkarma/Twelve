@@ -4,6 +4,7 @@ import styled from "styled-components";
 const CardWrapper = styled.div`
   padding: 0px;
   margin-bottom: 100px;
+  background-color: white;
 `;
 
 const StyledH2 = styled.h2`
