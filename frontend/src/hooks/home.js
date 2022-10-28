@@ -18,7 +18,7 @@ const StyledText = styled.div`
 const Home = () => {
   return (
     <CardWrapper>
-      <StyledH2>Introduction</StyledH2>
+      <StyledH2>The Beginning</StyledH2>
       <StyledText>
         <p className="lead">
           The pandemic has disrupted our way of living, how we connect to others
