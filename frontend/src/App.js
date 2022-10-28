@@ -10,7 +10,7 @@ import Stories from "./hooks/stories";
 import Register from "./hooks/register";
 import Login from "./hooks/login";
 import AddStory from "./hooks/add-story";
-import Personas from "./hooks/personas";
+// import Personas from "./hooks/personas";
 // import Test from "./hooks/test";
 
 import { AuthContainer } from "./contexts/auth";

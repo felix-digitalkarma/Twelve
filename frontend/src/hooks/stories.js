@@ -25,12 +25,12 @@ const Container = styled.div`
   }
 `;
 
-const CardWrapper = styled.div`
-  margin: 5px;
-  display: inline-block;
-  flex-direction: row;
-  min-width: 100%;
-`;
+// const CardWrapper = styled.div`
+//   margin: 5px;
+//   display: inline-block;
+//   flex-direction: row;
+//   min-width: 100%;
+// `;
 
 export const Story = (props) => {
   console.log(props);
