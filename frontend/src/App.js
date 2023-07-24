@@ -34,7 +34,6 @@ const App = () => {
         <Router>
           <Landing path="/" />
         </Router>
-        <Footer />
       </HelmetProvider>
     </AuthContainer>
   );
