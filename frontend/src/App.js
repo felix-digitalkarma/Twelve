@@ -33,6 +33,10 @@ const App = () => {
         </Helmet>
         <Router>
           <Landing path="/" />
+          <Login path="login" />
+          <Register path="register" />
+          <Stories path="stories" />
+          <AddStory path="addstory" />
         </Router>
       </HelmetProvider>
     </AuthContainer>

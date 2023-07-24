@@ -78,7 +78,7 @@ export const Stories = (props) => {
           Interaction Design.org
         </a>
       </p>
-      <Link to="/add-story">Add Story</Link>
+      <Link to="/addstory">Add Story</Link>
       <Container>
         <ul>
           {stories !== null &&

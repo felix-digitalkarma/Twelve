@@ -3,7 +3,13 @@ import styled from "styled-components";
 import { useAuthStore } from "../contexts/auth";
 
 const Wrapper = styled.div`
+  display: flex;
   padding: 20px;
+`;
+
+const StyledInput = styled.input`
+  padding: 10px;
+  height: 50px;
 `;
 
 export const Register = () => {
@@ -32,31 +38,28 @@ export const Register = () => {
 
   return (
     <Wrapper>
-      <h1>Register Form</h1>
-      {state.isAuthenticated}
       <form onSubmit={(e) => handleSubmit(e)}>
-        <input
+        <StyledInput
           type="text"
           name="firstName"
-          className="form-control"
-          placeholder="John"
+          placeholder="First Name"
           id="firstName"
           value={firstName}
           onChange={(e) => onChange(e)}
           required
         />
-        <input
+        <StyledInput
           type="text"
           name="lastInitial"
           id="lastInitial"
-          placeholder="D"
+          placeholder="Last Name Initial"
           value={lastInitial}
           onChange={(e) => onChange(e)}
           required
           autoComplete="false"
         />
-        <input
-          type="text"
+        <StyledInput
+          type="email"
           name="email"
           id="email"
           placeholder="Email"
@@ -64,7 +67,7 @@ export const Register = () => {
           onChange={(e) => onChange(e)}
           autoComplete="false"
         />
-        <input
+        <StyledInput
           type="password"
           name="password"
           id="password"
@@ -75,7 +78,7 @@ export const Register = () => {
           placeholder="Password"
         />
 
-        <input
+        <StyledInput
           type="text"
           name="phone"
           id="phone"
@@ -84,7 +87,7 @@ export const Register = () => {
           placeholder="Phone (optional)"
         />
         <br />
-        <input type="submit" value="Submit" />
+        <StyledInput type="submit" value="Submit" />
       </form>
     </Wrapper>
   );
