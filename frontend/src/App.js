@@ -4,7 +4,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-// import Landing from "./hooks/landing";
+import Landing from "./hooks/landing";
 import Home from "./hooks/home";
 import Stories from "./hooks/stories";
 import Register from "./hooks/register";
@@ -33,11 +33,7 @@ const App = () => {
         </Helmet>
         <Navbar />
         <Router>
-          <Home path="/" />
-          <Stories path="stories" />
-          <Register path="register" />
-          <Login path="login" />
-          <AddStory path="add-story" />
+          <Landing path="/" />
         </Router>
         <Footer />
       </HelmetProvider>
