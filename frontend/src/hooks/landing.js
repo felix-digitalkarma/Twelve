@@ -31,7 +31,7 @@ const Landing = () => {
   return (
     <div className="text-center cover-container d-flex p-3 mx-auto flex-column">
       <Helmet>
-        <title>Twelve : Intro</title>
+        <title>Twelve : Welcome</title>
         <link rel="canonical" href="http://www.twelve.community" />
         <meta
           name="keywords"
