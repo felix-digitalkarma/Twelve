@@ -31,7 +31,7 @@ export const Login = () => {
 
   return (
     <Wrapper>
-      <h1>Login Form {test}</h1>
+      <h1>Login Form</h1>
       <p>Currently Authenticated: {`${state.isAuthenticated}`}</p>
       <form onSubmit={(e) => handleSubmit(e)}>
         <input

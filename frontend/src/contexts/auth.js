@@ -52,7 +52,7 @@ const actions = {
         setAuthToken(res.data.token);
         localStorage.setItem("token", res.data.token);
       } catch (error) {
-        setState({ error, loading: false });
+        setState({ error: error.msg, loading: false });
       }
     },
   logout:

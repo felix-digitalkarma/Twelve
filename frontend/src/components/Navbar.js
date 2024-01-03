@@ -27,15 +27,15 @@ export const Navbar = () => {
             </a>
           </h3>
           <nav className="nav nav-masthead justify-content-center">
+            {/* <a className="nav-link" href="/register">
+              Register
+            </a>
             <a className="nav-link" href="/login">
               Login
             </a>
             <a className="nav-link" href="/stories">
               Stories
-            </a>
-            <a className="nav-link" href="/register">
-              Sign Up
-            </a>
+            </a>*/}
           </nav>
         </div>
       </StyledHeader>

@@ -31,6 +31,7 @@ const App = () => {
             content="Spiritual,based,social,platform,Anonymity, designing principle,Recovery, purpose,Connection , modern technology"
           />
         </Helmet>
+        <Navbar />
         <Router>
           <Landing path="/" />
           <Login path="login" />

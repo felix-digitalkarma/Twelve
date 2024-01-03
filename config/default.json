@@ -1,7 +1,7 @@
 {
-  "PRO_MONGO":"mongodb+srv://dbAdmin:LovingParent2020!@cluster0.xldio.mongodb.net/twelve",
-  "DEV_MONGO":"mongodb+srv://dbAdmin:LovingParent2020!@cluster0.xldio.mongodb.net/test",
-  "LOCAL_MONGO":"mongodb://127.0.0.1:27017/twelve",
-  "jwtSecret":"lucky3114",
+  "PRO_MONGO": "mongodb+srv://dbAdmin:LovingParent2020!@cluster0.xldio.mongodb.net/twelve",
+  "DEV_MONGO": "mongodb+srv://dbAdmin:LovingParent2020!@cluster0.xldio.mongodb.net/test",
+  "LOCAL_MONGO": "mongodb://127.0.0.1:27017/twelve",
+  "jwtSecret": "lucky3114",
   "expiresIn": 3600
 }
