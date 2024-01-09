@@ -57,7 +57,7 @@ const Landing = () => {
         </p>
         <ImageContainer>
           <ImageIcons image={paypal} height="200px" />
-          <ImageIcons image={venmo} width="320px" />
+          <ImageIcons image={venmo} height="200px" />
         </ImageContainer>
       </main>
     </div>
