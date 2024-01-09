@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import Avatar from "../components/Avatar";
 import paypal from "../assets/paypal_qrcode.png";
-import venmo from "../assets/venmo_qrcode.png";
+import venmo from "../assets/venmo_qrcode2.png";
 
 const ImageIcons = styled(Avatar)`
   margin-left: 10px;
@@ -40,7 +40,7 @@ const Landing = () => {
       <main role="main" className="inner cover">
         <h1 className="cover-heading">Story Driven Recovery</h1>
         <p>
-          Twelve Community is a donation-friendly Spiritually-based social
+          Twelve Community is a donation-welcomed spiritually-based social
           platform with a mission to deliver high-quality audio recordings that
           focus on recovery in various programs such as Alcoholics Anonymous,
           Codependents Anonymous and Adult Children of Alcoholic and
